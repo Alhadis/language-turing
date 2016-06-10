@@ -9,6 +9,8 @@ repository:
 	main:
 		patterns: [
 			{ include: "#comment"  }
+			{ include: "#string"   }
+			{ include: "#numbers"  }
 			{ include: "#function" }
 		]
 
@@ -20,7 +22,22 @@ repository:
 		end:   "$"
 		beginCaptures:
 			0: name: "punctuation.definition.comment.turing"
-
+	
+	
+	# String literals
+	string:
+		name: "string.quoted.double.turing"
+		begin: '"'
+		end:   '"'
+	
+	
+	# Numbers
+	numbers:
+		patterns: [
+			{name: "constant.numeric.float.turing", match: "\\d+\\.\\d+"}
+			{name: "constant.numeric.int.turing",   match: "\\d+"}
+		]
+	
 	
 	# Function declaration
 	function:
