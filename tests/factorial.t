@@ -1,6 +1,8 @@
 % Accepts a number and calculates its factorial
 
-function factorial (n: int) : real
+function pervasive factorial (n: int) : real
+	pre trueFalseCond
+	init factorial := expression
 	if n = 0 then
 		result 1
 	else

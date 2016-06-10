@@ -8,7 +8,8 @@ repository:
 	# Common patterns
 	main:
 		patterns: [
-			{ include: "#comment" }
+			{ include: "#comment"  }
+			{ include: "#function" }
 		]
 
 
@@ -21,3 +22,60 @@ repository:
 			0: name: "punctuation.definition.comment.turing"
 
 	
+	# Function declaration
+	function:
+		name: "meta.function.turing"
+		begin: """(?x)
+			\\b
+			(function|fcn)  # 1: storage.type.turing
+			(?:
+				\\s+
+				(pervasive) # 2: storage.modifier.pervasive.turing
+			)?
+			\\s+
+			(\\w+)          # 3: entity.name.function.turing
+			\\s+
+			(               # 4: meta.function.parameters.turing
+				(\\()       # 5: punctuation.definition.parameters.begin.turing
+				(.*)        # 6: include: “#param-declarations”
+				(\\))       # 7: punctuation.definition.parameters.end.turing
+			)
+			\\s*
+			(:)             # 8: punctuation.separator.key-value.turing
+			\\s*
+			(\\w+)          # 9: storage.type.type-spec.turing
+		"""
+		end: "\\b(end)\\s+(\\3)"
+		patterns: [{
+			
+			# pre|init|post clause
+			name: "meta.$1-function.turing"
+			begin: "^\\s*(pre|init|post)(?=\\s|$)"
+			end: "$"
+			beginCaptures:
+				1: name: "keyword.function.$1.turing"
+		
+			},{ include: "#main" }
+		]
+		beginCaptures:
+			1: name: "storage.type.turing"
+			2: name: "storage.modifier.pervasive.turing"
+			3: name: "entity.name.function.turing"
+			4: name: "meta.function.parameters.turing"
+			5: name: "punctuation.definition.parameters.begin.turing"
+			6: patterns: [include: "#param-declarations"]
+			7: name: "punctuation.definition.parameters.end.turing"
+			8: name: "punctuation.separator.key-value.turing"
+			9: name: "storage.type.type-spec.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "entity.name.function.turing"
+
+
+	# Function parameters
+	"param-declarations":
+		match: "\\b(\\w+)\\s+(:)\\s+((\\w+))"
+		captures:
+			1: name: "variable.parameter.function.turing"
+			2: name: "storage.type.turing"
+			3: patterns: [include: "#types"]
