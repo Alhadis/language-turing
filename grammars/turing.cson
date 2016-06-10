@@ -1,0 +1,23 @@
+name: "Turing"
+scopeName: "source.turing"
+fileTypes: [".t", ".tu"]
+patterns: [include: "#main"]
+
+repository:
+	
+	# Common patterns
+	main:
+		patterns: [
+			{ include: "#comment" }
+		]
+
+
+	# Comment lines
+	comment:
+		name: "comment.line.percentage.turing"
+		begin: "%"
+		end:   "$"
+		beginCaptures:
+			0: name: "punctuation.definition.comment.turing"
+
+	
