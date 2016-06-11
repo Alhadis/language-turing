@@ -19,6 +19,9 @@ case mark of
 end case
 
 
+procedure ProcName (Type1 : name1)
+	
+end ProcName
 
 % For loops
 for i : 1 .. 10

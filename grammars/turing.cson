@@ -18,6 +18,7 @@ repository:
 			{ include: "#keywords"      }
 			{ include: "#variables"     }
 			{ include: "#operators"     }
+			{ include: "#procedure"     }
 			{ include: "#function-call" }
 		]
 
@@ -196,6 +197,33 @@ repository:
 			3: name: "keyword.operator.of.turing"
 		endCaptures:
 			1: name: "keyword.control.end.case.turing"
+
+
+	# Procedure declaration
+	procedure:
+		name: "meta.scope.procedure.turing"
+		begin: "\\b(procedure|proc)\\s+(\\w+)"
+		end:   "\\b(end)\\s+(\\2)"
+		patterns: [
+			{
+				name: "meta.function.parameters.turing"
+				begin: "\\G\\s*(\\()"
+				end: "\\)"
+				beginCaptures: 1: name: "punctuation.definition.arguments.begin.turing"
+				endCaptures:   0: name: "punctuation.definition.arguments.end.turing"
+				patterns: [
+					{include: "$self"}
+					{match: "\\w+", name: "variable.parameter.function.turing"}
+				]
+			}
+			{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "storage.type.function.turing"
+			2: name: "entity.name.function.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "entity.name.function.turing"
 	
 
 	# Variables

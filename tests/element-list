@@ -391,7 +391,7 @@ pre - assertion
 precedence - of operators
 pred - predecessor function
 prefix - operator
-procedure - declaration
+% procedure - declaration
 % procedureCall - statement
 process - declaration
 program - a (main) program
