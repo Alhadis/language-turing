@@ -4,7 +4,7 @@ abs - absolute value function
 addr - address of a variable
 addressint - type
 all - all members of a set
-and - operator
+% and - operator
 anyclass - the ancestor of all classes
 arctan - arctangent function (radians)
 arctand - arctangent function (degrees)
@@ -156,7 +156,7 @@ fork - statement
 forward - subprogram declaration
 frealstr - real-to-string function
 free - statement
-function - declaration
+% function - declaration
 functionCall
 get - file statement
 getch - get character procedure
@@ -262,7 +262,7 @@ handler - exception handler
 hasch - has character function
 id - (identifier) name of an item in a program
 #if - used for conditional compilation
-if - statement
+% if - statement
 implement by - clause
 implement - clause
 import - list
@@ -344,11 +344,11 @@ Net.TokenAvailable
 Net.WaitForConnection
 new - statement
 nil - pointer to a collection
-not - true/false (boolean) operator
+% not - true/false (boolean) operator
 objectclass - of a pointer
 opaque - type
 open - file statement
-or - operator
+% or - operator
 ord - character-to-integer function
 parallelget - parallel port function
 parallelput - parallel port procedure
@@ -530,7 +530,7 @@ union - type
 unit - file containing module, monitor, or class
 unqualified - export
 upper - bound
-var - declaration
+% var - declaration
 variableReference - use of a variable
 View
 View.ClipAdd
