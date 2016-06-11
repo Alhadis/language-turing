@@ -12,6 +12,7 @@ repository:
 			{ include: "#boolean"       }
 			{ include: "#string"        }
 			{ include: "#numbers"       }
+			{ include: "#for"           }
 			{ include: "#function"      }
 			{ include: "#keywords"      }
 			{ include: "#variables"     }
@@ -137,13 +138,37 @@ repository:
 		patterns: [{
 			
 			# Control flow
-			match: "\\b((?:end\\s+)?if|then|elsif|else)\\b"
+			match: "\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when)\\b"
 			name: "keyword.control.$1.turing"
 		
 		},{
 			# Logical operators
 			match: "\\b(and|not|x?or)\\b"
 			name: "keyword.operator.$1.turing"
+		}]
+
+
+	# For loops
+	for:
+		patterns: [{
+			name: "meta.for-loop.turing"
+			begin: "\\b(for)\\b(?:\\s+(decreasing)\\b)?"
+			end:   "\\b(end)\\s+(for)"
+			patterns: [
+				{
+					match: "\\G(.*?)\\b(by)\\b"
+					captures:
+						1: patterns: [include: "$self"]
+						2: name: "keyword.control.by.turing"
+				
+				},{include: "$self"}
+			]
+			beginCaptures:
+				1: name: "keyword.control.for.turing"
+				2: name: "keyword.operator.decreasing.turing"
+			endCaptures:
+				1: name: "keyword.control.end.turing"
+				2: name: "keyword.control.for.turing"
 		}]
 
 

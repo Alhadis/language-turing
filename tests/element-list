@@ -151,7 +151,7 @@ Font.Sizes
 Font.StartName
 Font.StartSize
 Font.Width
-for - statement
+% for - statement
 fork - statement
 forward - subprogram declaration
 frealstr - real-to-string function
@@ -293,7 +293,7 @@ Limits
 ln - natural logarithm function
 locate - procedure
 locatexy - graphics procedure
-loop - statement
+% loop - statement
 lower - bound
 Math
 max - maximum function
