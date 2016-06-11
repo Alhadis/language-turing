@@ -16,7 +16,7 @@ begin - statement
 bind - declaration
 bits - extraction
 body - declaration
-boolean - true-false type
+% boolean - true-false type
 break - debugger pause statement
 buttonchoose - switch mouse modes
 buttonmoved - has a mouse event occurred
@@ -39,7 +39,7 @@ colorback - background color procedure
 colour - text color graphics procedure
 colourback - background color procedure
 % comment - remark statement
-comparisonOperator
+% comparisonOperator
 Concurrency
 Concurrency.empty
 Concurrency.getpriority
@@ -467,8 +467,8 @@ Stream
 Stream.eof
 Stream.Flush
 Stream.FlushAll
-string - type
-string - comparison
+% string - type
+% string - comparison
 strint - string-to-integer:function
 strintok - string-to-integer:function
 strnat - string to natural number function
@@ -568,4 +568,4 @@ Window.SetPosition
 Window.Show
 Window.Update
 write - file statement
-xor - exclusive "or" operator
+% xor - exclusive "or" operator
