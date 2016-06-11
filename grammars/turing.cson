@@ -160,11 +160,17 @@ repository:
 	# Arithmetic/Punctuation-based operators
 	operators:
 		patterns: [
-			{match: "\\.\\.", name: "punctuation.definition.range.turing"}
-			{match: ":=",     name: "punctuation.separator.key-value.assignment.turing"}
-			{match: "\\+",    name: "keyword.operator.arithmetic.add.turing"}
-			{match: "-",      name: "keyword.operator.arithmetic.subtract.turing"}
-			{match: "\\*",    name: "keyword.operator.arithmetic.multiply.turing"}
-			{match: "\\\\",   name: "keyword.operator.arithmetic.divide.turing"}
-			{match: ":",      name: "punctuation.separator.key-value.turing"}
+			{match: "\\.\\.",  name: "punctuation.definition.range.turing"}
+			{match: ":=",      name: "punctuation.separator.key-value.assignment.turing"}
+			{match: "\\+",     name: "keyword.operator.arithmetic.add.turing"}
+			{match: "-",       name: "keyword.operator.arithmetic.subtract.turing"}
+			{match: "\\*",     name: "keyword.operator.arithmetic.multiply.turing"}
+			{match: "\\\\",    name: "keyword.operator.arithmetic.divide.turing"}
+			{match: "<=",      name: "keyword.operator.logical.equal-or-less.subset.turing"}
+			{match: ">=",      name: "keyword.operator.logical.equal-or-greater.superset.turing"}
+			{match: "<",       name: "keyword.operator.logical.less.turing"}
+			{match: ">",       name: "keyword.operator.logical.greater.turing"}
+			{match: "=",       name: "keyword.operator.logical.equal.turing"}
+			{match: "not=|~=", name: "keyword.operator.logical.not.turing"}
+			{match: ":",       name: "punctuation.separator.key-value.turing"}
 		]
