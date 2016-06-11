@@ -34,8 +34,8 @@ repository:
 	# Numbers
 	numbers:
 		patterns: [
-			{name: "constant.numeric.float.turing", match: "\\d+\\.\\d+"}
-			{name: "constant.numeric.int.turing",   match: "\\d+"}
+			{name: "constant.numeric.float.turing", match: "\\b\\d+\\.\\d+\\b"}
+			{name: "constant.numeric.int.turing",   match: "\\b\\d+\\b"}
 		]
 	
 	
