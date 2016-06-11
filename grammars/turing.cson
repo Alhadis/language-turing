@@ -87,10 +87,11 @@ repository:
 			name: "meta.$1-function.turing"
 			begin: "^\\s*(pre|init|post)(?=\\s|$)"
 			end: "$"
+			patterns: [include: "$self"]
 			beginCaptures:
 				1: name: "keyword.function.$1.turing"
 		
-			},{ include: "#main" }
+			},{ include: "$self" }
 		]
 		beginCaptures:
 			1: name: "storage.type.turing"
@@ -119,12 +120,13 @@ repository:
 	# Function call
 	"function-call":
 		name: "meta.function-call.turing"
-		begin: "(\\w+)\\s*(\\()"
+		begin: "(([\\w.]+))\\s*(\\()"
 		end:   "\\)"
 		contentName: "meta.function-call.arguments.turing"
 		beginCaptures:
 			1: name: "entity.function.name.turing"
-			2: name: "punctuation.definition.arguments.begin.turing"
+			2: patterns: [match: "\\.", name: "punctuation.separator.method.turing"]
+			3: name: "punctuation.definition.arguments.begin.turing"
 		endCaptures:
 			0: name: "punctuation.definition.arguments.end.turing"
 		patterns: [include: "$self"]
