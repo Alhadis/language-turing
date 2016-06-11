@@ -140,11 +140,21 @@ repository:
 			# Control flow
 			match: "\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when)\\b"
 			name: "keyword.control.$1.turing"
-		
 		},{
+			
 			# Logical operators
 			match: "\\b(and|not|x?or)\\b"
 			name: "keyword.operator.$1.turing"
+		},{
+			
+			# Statements
+			match: "\\b(assert|begin|break|close|exit|fork|free|get|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
+			name: "keyword.other.statement.$1.turing"
+		},{
+		
+			# Skip (used in get/put statements)
+			match: "\\b(skip)\\b"
+			name: "constant.language.skip.turing"
 		}]
 
 

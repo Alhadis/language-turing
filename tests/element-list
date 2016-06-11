@@ -1,4 +1,5 @@
-Alphabetical List of All Turing Elements
+% Alphabetical List of All Turing Elements
+% √ marks which statements should affect indent (- John)
 
 abs - absolute value function
 addr - address of a variable
@@ -9,15 +10,15 @@ anyclass - the ancestor of all classes
 arctan - arctangent function (radians)
 arctand - arctangent function (degrees)
 array - type
-assert - statement
+% assert - statement
 assignability - of expression to variable
 assignment - statement
-begin - statement
+% begin - statement √
 bind - declaration
 bits - extraction
 body - declaration
 % boolean - true-false type
-break - debugger pause statement
+% break - debugger pause statement
 buttonchoose - switch mouse modes
 buttonmoved - has a mouse event occurred
 buttonwait - get a mouse event procedure
@@ -31,7 +32,7 @@ checked - compiler directive
 chr - integer-to-character function
 class - declaration
 clock - millisecs used procedure
-close - file statement
+% close - file statement
 cls - clear screen graphics procedure
 collection - declaration
 color - text color graphics procedure
@@ -117,7 +118,7 @@ Error.Str
 Error.Trip
 ErrorNum
 Exceptions
-exit - statement
+% exit - statement
 exp - exponentiation function
 explicitCharConstant - character literal
 explicitConstant - literal
@@ -151,14 +152,14 @@ Font.Sizes
 Font.StartName
 Font.StartSize
 Font.Width
-% for - statement
-fork - statement
+% for - statement √
+% fork - statement
 forward - subprogram declaration
 frealstr - real-to-string function
-free - statement
+% free - statement
 % function - declaration
 % functionCall
-get - file statement
+% get - file statement
 getch - get character procedure
 getchar - get character function
 getenv - get environment function
@@ -262,7 +263,7 @@ handler - exception handler
 hasch - has character function
 id - (identifier) name of an item in a program
 #if - used for conditional compilation
-% if - statement
+% if - statement √
 implement by - clause
 implement - clause
 import - list
@@ -342,18 +343,18 @@ Net.OpenConnection
 Net.OpenURLConnection
 Net.TokenAvailable
 Net.WaitForConnection
-new - statement
+% new - statement
 nil - pointer to a collection
 % not - true/false (boolean) operator
 objectclass - of a pointer
 opaque - type
-open - file statement
+% open - file statement
 % or - operator
 ord - character-to-integer function
 parallelget - parallel port function
 parallelput - parallel port procedure
 paramDeclaration - parameter declaration
-pause - statement
+% pause - statement
 PC
 PC.ParallelGet
 PC.ParallelPut
@@ -391,11 +392,11 @@ precedence - of operators
 pred - predecessor function
 prefix - operator
 procedure - declaration
-procedureCall - statement
+% procedureCall - statement
 process - declaration
 program - a (main) program
-put - statement
-quit - fail statement
+% put - statement
+% quit - fail statement
 Rand
 Rand.Int
 Rand.Next
@@ -408,7 +409,7 @@ randint - random integer procedure
 randnext - procedure
 randomize - procedure
 randseed - procedure
-read - file statement
+% read - file statement
 real - the real number type
 realn - n-byte real number type
 realstr - real-to-string function
@@ -416,8 +417,8 @@ record - type
 register - use machine register
 rem - remainder operator
 repeat - make copies of string:function
-result - statement
-return - statement
+% result - statement
+% return - statement
 RGB
 RGB.AddColor
 RGB.AddColour
@@ -429,7 +430,7 @@ RGB.SetColor
 RGB.SetColour
 round - real-to-integer function
 scalar - type
-seek - (file) statement
+% seek - (file) statement
 self - pointer to current object
 separator - between tokens in a program
 set - type
@@ -439,15 +440,15 @@ setscreen - graphics procedure
 shl - shift left operator
 shr - shift right operator
 sign - function
-signal - wake up a process statement
+% signal - wake up a process statement
 simutime - simulated time function
 sin - sine function (radians)
 sind - sine function (degrees)
 sizeof - size of a type
 sizepic - graphics function
-skip - used in get statement
-skip - used in put statement
-sound - statement
+% skip - used in get statement
+% skip - used in put statement
+sound - procedure
 Sprite
 Sprite.Animate
 Sprite.ChangePic
@@ -460,8 +461,8 @@ Sprite.SetPosition
 Sprite.Show
 sqrt - square root function
 standardType
-statement
-statementsAndDeclarations
+% statement
+% statementsAndDeclarations
 Str
 Stream
 Stream.eof
@@ -489,10 +490,10 @@ Sys.GetPid
 Sys.GetUserName
 Sys.Nargs
 sysclock - millisecs used procedure
-system - statement
-tag - statement
+% system - statement (procedure? - John)
+% tag - statement
 takepic - graphics procedure
-tell - file statement
+% tell - file statement
 Text
 Text.Cls
 Text.Color
@@ -544,7 +545,7 @@ View.Set
 View.Update - flicker-free animation
 View.WhatDotColor
 View.WhatDotColour
-wait - block a process statement
+% wait - block a process statement
 wallclock - seconds since 1/1/1970 procedure
 whatcol - cursor position function
 whatcolor - text color graphics function
@@ -567,5 +568,5 @@ Window.SetActive
 Window.SetPosition
 Window.Show
 Window.Update
-write - file statement
+% write - file statement
 % xor - exclusive "or" operator
