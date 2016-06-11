@@ -38,7 +38,7 @@ color - text color graphics procedure
 colorback - background color procedure
 colour - text color graphics procedure
 colourback - background color procedure
-comment - remark statement
+% comment - remark statement
 comparisonOperator
 Concurrency
 Concurrency.empty
