@@ -198,24 +198,43 @@ repository:
 			1: name: "keyword.control.end.case.turing"
 	
 
-	# Variable assignments
+	# Variables
 	variables:
-		name: "meta.variable.assignment.turing"
-		begin: "^\\s*(var)\\s+"
-		end:   "(:)\\s*(\\w*)\\s*(:=)?"
-		beginCaptures:
-			1: name: "storage.type.$1.turing"
-		endCaptures:
-			1: name: "punctuation.separator.key-value.turing"
-			2: name: "storage.type.type-spec.turing"
-			3: name: "punctuation.separator.key-value.turing"
 		patterns: [{
 			
-			# Object-oriented Turing: Additional keywords
-			match: "\\G(?:\\s*(pervasive|\\*)(?=\\s))?\\s*(register)(?=\\s)"
-			captures:
-				1: name: "storage.modifier.pervasive.oot.turing"
-				2: name: "storage.modifier.register.oot.turing"
+			# Declaration
+			name: "meta.variable-declaration.turing"
+			begin: "\\b(var)\\s+"
+			end:   "(:)\\s*(\\w*)\\s*(:=)?"
+			beginCaptures:
+				1: name: "storage.type.$1.turing"
+			endCaptures:
+				1: name: "punctuation.separator.key-value.turing"
+				2: name: "storage.type.type-spec.turing"
+				3: name: "punctuation.separator.key-value.turing"
+			patterns: [
+				
+				# Object-oriented Turing: Additional keywords
+				{
+					match: "\\G(?:\\s*(pervasive|\\*)(?=\\s))?\\s*(register)(?=\\s)"
+					captures:
+						1: name: "storage.modifier.pervasive.oot.turing"
+						2: name: "storage.modifier.register.oot.turing"
+				}
+				
+				# Variable names
+				{match: "\\w+", name: "variable.name.turing"}
+				{match: ",",    name: "meta.delimiter.object.comma.turing"}
+			]
+		},{
+			
+			# Assignment
+			name: "meta.variable-assignment.turing"
+			begin: "(\\w+)\\s*(:=)"
+			end: "(?=\\S)"
+			beginCaptures:
+				1: name: "variable.name.turing"
+				2: name: "punctuation.separator.key-value.turing"
 		}]
 
 	

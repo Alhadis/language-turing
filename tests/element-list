@@ -11,8 +11,8 @@ arctan - arctangent function (radians)
 arctand - arctangent function (degrees)
 array - type
 % assert - statement
-assignability - of expression to variable
-assignment - statement
+% assignability - of expression to variable
+% assignment - statement
 % begin - statement √
 bind - declaration
 bits - extraction
