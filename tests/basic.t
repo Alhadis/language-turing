@@ -9,6 +9,17 @@ end firstWord
 put "The first word is: ", firstWord ("Henry Hudson")
 	% The output is Henry.
 
+
+
+case mark of
+	label 9, 10 :   put "Excellent"
+	label 7, 8 :    put "Good"
+	label 6 :       put "Fair"
+	label :         put "Poor"
+end case
+
+
+
 % For loops
 for i : 1 .. 10
 	put i

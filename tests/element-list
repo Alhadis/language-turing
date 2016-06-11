@@ -22,7 +22,7 @@ body - declaration
 buttonchoose - switch mouse modes
 buttonmoved - has a mouse event occurred
 buttonwait - get a mouse event procedure
-case - selection statement
+% case - selection statement √
 catenation (+) - joining together strings
 ceil - real-to-integer function
 char(n) - type

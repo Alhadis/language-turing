@@ -13,6 +13,7 @@ repository:
 			{ include: "#string"        }
 			{ include: "#numbers"       }
 			{ include: "#for"           }
+			{ include: "#case"          }
 			{ include: "#function"      }
 			{ include: "#keywords"      }
 			{ include: "#variables"     }
@@ -160,27 +161,42 @@ repository:
 
 	# For loops
 	for:
-		patterns: [{
-			name: "meta.for-loop.turing"
-			begin: "\\b(for)\\b(?:\\s+(decreasing)\\b)?"
-			end:   "\\b(end)\\s+(for)"
-			patterns: [
-				{
-					match: "\\G(.*?)\\b(by)\\b"
-					captures:
-						1: patterns: [include: "$self"]
-						2: name: "keyword.control.by.turing"
-				
-				},{include: "$self"}
-			]
-			beginCaptures:
-				1: name: "keyword.control.for.turing"
-				2: name: "keyword.operator.decreasing.turing"
-			endCaptures:
-				1: name: "keyword.control.end.turing"
-				2: name: "keyword.control.for.turing"
-		}]
+		name: "meta.for-loop.turing"
+		begin: "\\b(for)\\b(?:\\s+(decreasing)\\b)?"
+		end:   "\\b(end)\\s+(for)"
+		patterns: [
+			{
+				match: "\\G(.*?)\\b(by)\\b"
+				captures:
+					1: patterns: [include: "$self"]
+					2: name: "keyword.control.by.turing"
+			
+			},{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "keyword.control.for.turing"
+			2: name: "keyword.operator.decreasing.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "keyword.control.for.turing"
 
+	
+	# Case blocks
+	case:
+		name: "meta.scope.case-block.turing"
+		begin: "\\b(case)\\s+(\\w+)\\s+(of)\\b"
+		end:   "\\b(end\\s+case)\\b"
+		patterns: [
+			{match: "\\b(label)\\b", name: "keyword.other.statement.label"}
+			{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "keyword.control.case.turing"
+			2: name: "variable.parameter.turing"
+			3: name: "keyword.operator.of.turing"
+		endCaptures:
+			1: name: "keyword.control.end.case.turing"
+	
 
 	# Variable assignments
 	variables:
