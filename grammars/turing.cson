@@ -12,6 +12,7 @@ repository:
 			{ include: "#string"   }
 			{ include: "#numbers"  }
 			{ include: "#function" }
+			{ include: "#keywords" }
 		]
 
 
@@ -96,3 +97,18 @@ repository:
 			1: name: "variable.parameter.function.turing"
 			2: name: "storage.type.turing"
 			3: patterns: [include: "#types"]
+
+	
+	# Keywords
+	keywords:
+		patterns: [{
+			
+			# Control flow
+			match: "\\b((?:end\\s+)?if|then|elsif|else)\\b"
+			name: "keyword.control.$1.turing"
+		
+		},{
+			# Logical operators
+			match: "\\b(and|not|x?or)\\b"
+			name: "keyword.operator.$1.turing"
+		}]
