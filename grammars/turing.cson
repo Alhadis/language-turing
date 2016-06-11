@@ -9,11 +9,13 @@ repository:
 	main:
 		patterns: [
 			{ include: "#comment"   }
+			{ include: "#boolean"   }
 			{ include: "#string"    }
 			{ include: "#numbers"   }
 			{ include: "#function"  }
 			{ include: "#keywords"  }
 			{ include: "#variables" }
+			{ include: "#operators" }
 		]
 
 
@@ -134,3 +136,22 @@ repository:
 				1: name: "storage.modifier.pervasive.oot.turing"
 				2: name: "storage.modifier.register.oot.turing"
 		}]
+
+	
+	# Boolean values
+	boolean:
+		name: "constant.language.boolean.$1.turing"
+		match: "\\b(true|false)\\b"
+	
+	
+	# Arithmetic/Punctuation-based operators
+	operators:
+		patterns: [
+			{match: "\\.\\.", name: "punctuation.definition.range.turing"}
+			{match: ":=",     name: "punctuation.separator.key-value.assignment.turing"}
+			{match: "\\+",    name: "keyword.operator.arithmetic.add.turing"}
+			{match: "-",      name: "keyword.operator.arithmetic.subtract.turing"}
+			{match: "\\*",    name: "keyword.operator.arithmetic.multiply.turing"}
+			{match: "\\\\",   name: "keyword.operator.arithmetic.divide.turing"}
+			{match: ":",      name: "punctuation.separator.key-value.turing"}
+		]
