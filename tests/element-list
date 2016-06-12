@@ -1,14 +1,14 @@
 % Alphabetical List of All Turing Elements
 % √ marks which statements should affect indent (- John)
 
-abs - absolute value function
+% abs - absolute value function
 addr - address of a variable
 addressint - type
 all - all members of a set
 % and - operator
 anyclass - the ancestor of all classes
-arctan - arctangent function (radians)
-arctand - arctangent function (degrees)
+% arctan - arctangent function (radians)
+% arctand - arctangent function (degrees)
 array - type
 % assert - statement
 % assignability - of expression to variable
@@ -24,12 +24,12 @@ buttonmoved - has a mouse event occurred
 buttonwait - get a mouse event procedure
 % case - selection statement √
 catenation (+) - joining together strings
-ceil - real-to-integer function
+% ceil - real-to-integer function
 char(n) - type
 char - type
 cheat - type cheating
 checked - compiler directive
-chr - integer-to-character function
+% chr - integer-to-character function
 % class - declaration √
 clock - millisecs used procedure
 % close - file statement
@@ -41,52 +41,52 @@ colour - text color graphics procedure
 colourback - background color procedure
 % comment - remark statement
 % comparisonOperator
-Concurrency
-Concurrency.empty
-Concurrency.getpriority
-Concurrency.setpriority
-Concurrency.simutime
+% Concurrency
+% Concurrency.empty
+% Concurrency.getpriority
+% Concurrency.setpriority
+% Concurrency.simutime
 condition - declaration
-Config
-Config.Display
-Config.Lang
-Config.Machine
+% Config
+% Config.Display
+% Config.Lang
+% Config.Machine
 const - constant declaration
 constantReference - use of a constant
-cos - cosine function (radians)
-cosd - cosine function (degrees)
+% cos - cosine function (radians)
+% cosd - cosine function (degrees)
 date - procedure
 declaration - create a variable
 % deferred - subprogram declaration
 delay - procedure
-Dir
-Dir.Change
-Dir.Close
-Dir.Create
-Dir.Current
-Dir.Delete
-Dir.Get
-Dir.GetLong
-Dir.Open
+% Dir
+% Dir.Change
+% Dir.Close
+% Dir.Create
+% Dir.Current
+% Dir.Delete
+% Dir.Get
+% Dir.GetLong
+% Dir.Open
 div - integer truncating division operator
-Draw
-Draw.Arc
-Draw.Box
-Draw.Cls
-Draw.Dot
-Draw.Fill
-Draw.FillArc
-Draw.FillBox
-Draw.FillMapleLeaf
-Draw.FillOval
-Draw.FillPolygon
-Draw.FillStar
-Draw.Line
-Draw.MapleLeaf
-Draw.Oval
-Draw.Polygon
-Draw.Star
-Draw.Text
+% Draw
+% Draw.Arc
+% Draw.Box
+% Draw.Cls
+% Draw.Dot
+% Draw.Fill
+% Draw.FillArc
+% Draw.FillBox
+% Draw.FillMapleLeaf
+% Draw.FillOval
+% Draw.FillPolygon
+% Draw.FillStar
+% Draw.Line
+% Draw.MapleLeaf
+% Draw.Oval
+% Draw.Polygon
+% Draw.Star
+% Draw.Text
 drawarc - graphics procedure
 drawbox - graphics procedure
 drawdot - graphics procedure
@@ -108,18 +108,18 @@ enum - enumerated type
 enumeratedValue - enumerated value
 eof - end-of-file function
 equivalence - of types
-erealstr - real-to-string function
-Error
-Error.Last
-Error.LastMsg
-Error.LastStr
-Error.Msg
-Error.Str
-Error.Trip
+% erealstr - real-to-string function
+% Error
+% Error.Last
+% Error.LastMsg
+% Error.LastStr
+% Error.Msg
+% Error.Str
+% Error.Trip
 ErrorNum
 Exceptions
 % exit - statement
-exp - exponentiation function
+% exp - exponentiation function
 explicitCharConstant - character literal
 explicitConstant - literal
 explicitIntegerConstant - integer literal
@@ -131,31 +131,31 @@ expn - expression
 external - declaration
 % false - boolean value (not true)
 fetcharg - fetch argument function
-File
-File.Copy
-File.Delete
-File.DiskFree
-File.Exists
-File.Rename
-File.Status
+% File
+% File.Copy
+% File.Delete
+% File.DiskFree
+% File.Exists
+% File.Rename
+% File.Status
 flexible - array initialization
-floor - real-to-integer function
-Font
-Font.Draw
-Font.Free
-Font.GetName
-Font.GetSize
-Font.GetStyle
-Font.Name
-Font.New
-Font.Sizes
-Font.StartName
-Font.StartSize
-Font.Width
+% floor - real-to-integer function
+% Font
+% Font.Draw
+% Font.Free
+% Font.GetName
+% Font.GetSize
+% Font.GetStyle
+% Font.Name
+% Font.New
+% Font.Sizes
+% Font.StartName
+% Font.StartSize
+% Font.Width
 % for - statement √
 % fork - statement
 % forward - subprogram declaration
-frealstr - real-to-string function
+% frealstr - real-to-string function
 % free - statement
 % function - declaration
 % functionCall
@@ -165,100 +165,119 @@ getchar - get character function
 getenv - get environment function
 getpid - get process id function
 getpriority - function
-GUI
-GUI.AddLine
-GUI.AddText
-GUI.Alert
-GUI.Alert2
-GUI.Alert3
-GUI.AlertFull
-GUI.Choose
-GUI.ChooseFull
-GUI.ClearText
-GUI.CloseWindow
-GUI.CreateButton
-GUI.CreateButtonFull
-GUI.CreateCanvas
-GUI.CreateCanvasFull
-GUI.CreateCheckBox
-GUI.CreateCheckBoxFull
-GUI.CreateFrame
-GUI.CreateHorizontalScrollBar
-GUI.CreateHorizontalScrollBarFull
-GUI.CreateHorizontalSlider
-GUI.CreateLabel
-GUI.CreateLabelFull
-GUI.CreateLabelledFrame
-GUI.CreateLine
-GUI.CreateMenu
-GUI.CreateMenuItem
-GUI.CreateMenuItemFull
-GUI.CreatePicture
-GUI.CreatePictureButton
-GUI.CreatePictureButtonFull
-GUI.CreatePictureRadioButton
-GUI.CreatePictureRadioButtonFull
-GUI.CreateRadioButton
-GUI.CreateRadioButtonFull
-GUI.CreateTextBox
-GUI.CreateTextBoxFull
-GUI.CreateTextField
-GUI.CreateTextFieldFull
-GUI.CreateVerticalScrollBar
-GUI.CreateVerticalScrollBarFull
-GUI.CreateVerticalSlider
-GUI.Disable
-GUI.Dispose
-GUI.Draw...
-GUI.Enable
-GUI.FontDraw
-GUI.GetCheckBox
-GUI.GetEventTime
-GUI.GetEventWidgetID
-GUI.GetEventWindow
-GUI.GetHeight
-GUI.GetMenuBarHeight
-GUI.GetScrollBarWidth
-GUI.GetSliderValue
-GUI.GetText
-GUI.GetVersion
-GUI.GetWidth
-GUI.GetX
-GUI.GetY
-GUI.Hide
-GUI.HideMenuBar
-GUI.OpenFile
-GUI.OpenFileFull
-GUI.Pic...
-GUI.ProcessEvent
-GUI.Quit
-GUI.Refresh
-GUI.SaveFile
-GUI.SaveFileFull
-GUI.SelectRadio
-GUI.SetActive
-GUI.SetBackgroundColor
-GUI.SetBackgroundColour
-GUI.SetCheckBox
-GUI.SetDefault
-GUI.SetDisplayWhenCreated
-GUI.SetKeyEventHandler
-GUI.SetLabel
-GUI.SetMouseEventHandler
-GUI.SetNullEventHandler
-GUI.SetPosition
-GUI.SetPositionAndSize
-GUI.SetScrollAmount
-GUI.SetSelection
-GUI.SetSize
-GUI.SetSliderMinMax
-GUI.SetSliderReverse
-GUI.SetSliderSize
-GUI.SetSliderValue
-GUI.SetText
-GUI.SetXOR
-GUI.Show
-GUI.ShowMenuBar
+% GUI
+% GUI.AddLine
+% GUI.AddText
+% GUI.Alert
+% GUI.Alert2
+% GUI.Alert3
+% GUI.AlertFull
+% GUI.Choose
+% GUI.ChooseFull
+% GUI.ClearText
+% GUI.CloseWindow
+% GUI.CreateButton
+% GUI.CreateButtonFull
+% GUI.CreateCanvas
+% GUI.CreateCanvasFull
+% GUI.CreateCheckBox
+% GUI.CreateCheckBoxFull
+% GUI.CreateFrame
+% GUI.CreateHorizontalScrollBar
+% GUI.CreateHorizontalScrollBarFull
+% GUI.CreateHorizontalSlider
+% GUI.CreateLabel
+% GUI.CreateLabelFull
+% GUI.CreateLabelledFrame
+% GUI.CreateLine
+% GUI.CreateMenu
+% GUI.CreateMenuItem
+% GUI.CreateMenuItemFull
+% GUI.CreatePicture
+% GUI.CreatePictureButton
+% GUI.CreatePictureButtonFull
+% GUI.CreatePictureRadioButton
+% GUI.CreatePictureRadioButtonFull
+% GUI.CreateRadioButton
+% GUI.CreateRadioButtonFull
+% GUI.CreateTextBox
+% GUI.CreateTextBoxFull
+% GUI.CreateTextField
+% GUI.CreateTextFieldFull
+% GUI.CreateVerticalScrollBar
+% GUI.CreateVerticalScrollBarFull
+% GUI.CreateVerticalSlider
+% GUI.Disable
+% GUI.Dispose
+% GUI.DrawArc
+% GUI.DrawBox
+% GUI.DrawCls
+% GUI.DrawDot
+% GUI.DrawFill
+% GUI.DrawFillArc
+% GUI.DrawFillBox
+% GUI.DrawFillMapleLeaf
+% GUI.DrawFillOval
+% GUI.DrawFillPolygon
+% GUI.DrawFillStar
+% GUI.DrawLine
+% GUI.DrawMapleLeaf
+% GUI.DrawOval
+% GUI.DrawPolygon
+% GUI.DrawStar
+% GUI.DrawText
+% GUI.Enable
+% GUI.FontDraw
+% GUI.GetCheckBox
+% GUI.GetEventTime
+% GUI.GetEventWidgetID
+% GUI.GetEventWindow
+% GUI.GetHeight
+% GUI.GetMenuBarHeight
+% GUI.GetScrollBarWidth
+% GUI.GetSliderValue
+% GUI.GetText
+% GUI.GetVersion
+% GUI.GetWidth
+% GUI.GetX
+% GUI.GetY
+% GUI.Hide
+% GUI.HideMenuBar
+% GUI.OpenFile
+% GUI.OpenFileFull
+% GUI.PicDraw
+% GUI.PicNew
+% GUI.PicScreenLoad
+% GUI.PicScreenSave
+% GUI.ProcessEvent
+% GUI.Quit
+% GUI.Refresh
+% GUI.SaveFile
+% GUI.SaveFileFull
+% GUI.SelectRadio
+% GUI.SetActive
+% GUI.SetBackgroundColor
+% GUI.SetBackgroundColour
+% GUI.SetCheckBox
+% GUI.SetDefault
+% GUI.SetDisplayWhenCreated
+% GUI.SetKeyEventHandler
+% GUI.SetLabel
+% GUI.SetMouseEventHandler
+% GUI.SetNullEventHandler
+% GUI.SetPosition
+% GUI.SetPositionAndSize
+% GUI.SetScrollAmount
+% GUI.SetSelection
+% GUI.SetSize
+% GUI.SetSliderMinMax
+% GUI.SetSliderReverse
+% GUI.SetSliderSize
+% GUI.SetSliderValue
+% GUI.SetText
+% GUI.SetXOR
+% GUI.Show
+% GUI.ShowMenuBar
 handler - exception handler
 hasch - has character function
 id - (identifier) name of an item in a program
@@ -269,35 +288,35 @@ id - (identifier) name of an item in a program
 % import - list
 in - member of a set
 include - source files
-index - find pattern in string function
+% index - find pattern in string function
 indexType
 indirection - operator (@)
 infix - operator
 % inherit - inheritance clause
 init - array initialization
-Input
-Input.getch
-Input.getchar
-Input.hasch
-Input.KeyDown - get keyboard state
-Input.Pause - pause for keystroke
+% Input
+% Input.getch
+% Input.getchar
+% Input.hasch
+% Input.KeyDown - get keyboard state
+% Input.Pause - pause for keystroke
 int - integer type
 intn - n-byte integer type
-intreal - integer-to-real function
-intstr - integer-to-string function
+% intreal - integer-to-real function
+% intstr - integer-to-string function
 invariant - assertion
-Joystick
-Joystick.GetInfo
-Keyboard
-length - of a string function
-Limits
-ln - natural logarithm function
+% Joystick
+% Joystick.GetInfo
+% Keyboard
+% length - of a string function
+% Limits
+% ln - natural logarithm function
 locate - procedure
 locatexy - graphics procedure
 % loop - statement
 lower - bound
-Math
-max - maximum function
+% Math
+% max - maximum function
 maxcol - maximum column function
 maxcolor - graphics function
 maxcolour - graphics function
@@ -306,43 +325,43 @@ maxnat - maximum natural number function
 maxrow - maximum row function
 maxx - graphics function
 maxy - graphics function
-min - minimum function
+% min - minimum function
 minint - minimum integer function
 minnat - minimum natural number function
 mod - modulo operator
 module - declaration
 % monitor - declaration
-Mouse
-Mouse.ButtonChoose
-Mouse.ButtonMoved
-Mouse.ButtonWait
-Mouse.Where
+% Mouse
+% Mouse.ButtonChoose
+% Mouse.ButtonMoved
+% Mouse.ButtonWait
+% Mouse.Where
 mousewhere
-Music
-Music.Play
-Music.PlayFile
-Music.PlayFileStop
-Music.Sound
-Music.SoundOff
+% Music
+% Music.Play
+% Music.PlayFile
+% Music.PlayFileStop
+% Music.Sound
+% Music.SoundOff
 named - type
 nargs - number of arguments
 nat - natural number type
 natn - n-byte natural number type
-natreal - natural number to real function
-natstr - natural-number-to-string function
-Net
-Net.BytesAvailable
-Net.CharAvailable
-Net.CloseConnection
-Net.HostAddressFromName
-Net.HostNameFromAddress
-Net.LineAvailable
-Net.LocalAddress
-Net.LocalName
-Net.OpenConnection
-Net.OpenURLConnection
-Net.TokenAvailable
-Net.WaitForConnection
+% natreal - natural number to real function
+% natstr - natural-number-to-string function
+% Net
+% Net.BytesAvailable
+% Net.CharAvailable
+% Net.CloseConnection
+% Net.HostAddressFromName
+% Net.HostNameFromAddress
+% Net.LineAvailable
+% Net.LocalAddress
+% Net.LocalName
+% Net.OpenConnection
+% Net.OpenURLConnection
+% Net.TokenAvailable
+% Net.WaitForConnection
 % new - statement
 nil - pointer to a collection
 % not - true/false (boolean) operator
@@ -350,39 +369,39 @@ objectclass - of a pointer
 opaque - type
 % open - file statement
 % or - operator
-ord - character-to-integer function
+% ord - character-to-integer function
 parallelget - parallel port function
 parallelput - parallel port procedure
 paramDeclaration - parameter declaration
 % pause - statement
-PC
-PC.ParallelGet
-PC.ParallelPut
-pervasive - declaration modifier
-Pic
-Pic.Blend
-Pic.Blur
-Pic.Draw
-Pic.DrawFrames
-Pic.DrawFramesBack
-Pic.DrawSpecial
-Pic.DrawSpecialBack
-Pic.FileNew
-Pic.FileNewFrames
-Pic.Flip
-Pic.Frames
-Pic.Free
-Pic.Height
-Pic.Mirror
-Pic.New
-Pic.Rotate
-Pic.Save
-Pic.Scale
-Pic.ScreenLoad
-Pic.ScreenSave
-Pic.SetTransparentColor
-Pic.SetTransparentColour
-Pic.Width
+% PC
+% PC.ParallelGet
+% PC.ParallelPut
+% pervasive - declaration modifier
+% Pic
+% Pic.Blend
+% Pic.Blur
+% Pic.Draw
+% Pic.DrawFrames
+% Pic.DrawFramesBack
+% Pic.DrawSpecial
+% Pic.DrawSpecialBack
+% Pic.FileNew
+% Pic.FileNewFrames
+% Pic.Flip
+% Pic.Frames
+% Pic.Free
+% Pic.Height
+% Pic.Mirror
+% Pic.New
+% Pic.Rotate
+% Pic.Save
+% Pic.Scale
+% Pic.ScreenLoad
+% Pic.ScreenSave
+% Pic.SetTransparentColor
+% Pic.SetTransparentColour
+% Pic.Width
 play - procedure
 playdone - function
 pointer - type
@@ -394,16 +413,16 @@ prefix - operator
 % procedure - declaration
 % procedureCall - statement
 % process - declaration
-program - a (main) program
+% program - a (main) program
 % put - statement
 % quit - fail statement
-Rand
-Rand.Int
-Rand.Next
-Rand.Real
-Rand.Reset
-Rand.Seed
-Rand.Set
+% Rand
+% Rand.Int
+% Rand.Next
+% Rand.Real
+% Rand.Reset
+% Rand.Seed
+% Rand.Set
 rand - random real number procedure
 randint - random integer procedure
 randnext - procedure
@@ -412,23 +431,23 @@ randseed - procedure
 % read - file statement
 real - the real number type
 realn - n-byte real number type
-realstr - real-to-string function
+% realstr - real-to-string function
 record - type
 register - use machine register
 rem - remainder operator
-repeat - make copies of string:function
+% repeat - make copies of string:function
 % result - statement
 % return - statement
-RGB
-RGB.AddColor
-RGB.AddColour
-RGB.GetColor
-RGB.GetColour
-RGB.maxcolor
-RGB.maxcolour
-RGB.SetColor
-RGB.SetColour
-round - real-to-integer function
+% RGB
+% RGB.AddColor
+% RGB.AddColour
+% RGB.GetColor
+% RGB.GetColour
+% RGB.maxcolor
+% RGB.maxcolour
+% RGB.SetColor
+% RGB.SetColour
+% round - real-to-integer function
 scalar - type
 % seek - (file) statement
 self - pointer to current object
@@ -439,92 +458,92 @@ setpriority - procedure
 setscreen - graphics procedure
 shl - shift left operator
 shr - shift right operator
-sign - function
+% sign - function
 % signal - wake up a process statement
 simutime - simulated time function
-sin - sine function (radians)
-sind - sine function (degrees)
+% sin - sine function (radians)
+% sind - sine function (degrees)
 sizeof - size of a type
 sizepic - graphics function
 % skip - used in get statement
 % skip - used in put statement
 sound - procedure
-Sprite
-Sprite.Animate
-Sprite.ChangePic
-Sprite.Free
-Sprite.Hide
-Sprite.New
-Sprite.SetFrameRate
-Sprite.SetHeight
-Sprite.SetPosition
-Sprite.Show
-sqrt - square root function
+% Sprite
+% Sprite.Animate
+% Sprite.ChangePic
+% Sprite.Free
+% Sprite.Hide
+% Sprite.New
+% Sprite.SetFrameRate
+% Sprite.SetHeight
+% Sprite.SetPosition
+% Sprite.Show
+% sqrt - square root function
 standardType
 % statement
 % statementsAndDeclarations
-Str
-Stream
-Stream.eof
-Stream.Flush
-Stream.FlushAll
+% Str
+% Stream
+% Stream.eof
+% Stream.Flush
+% Stream.FlushAll
 % string - type
 % string - comparison
-strint - string-to-integer:function
-strintok - string-to-integer:function
-strnat - string to natural number function
-strnatok - string to natural number function
-strreal - string-to-real function
-strrealok - string-to-real function
+% strint - string-to-integer:function
+% strintok - string-to-integer:function
+% strnat - string to natural number function
+% strnatok - string to natural number function
+% strreal - string-to-real function
+% strrealok - string-to-real function
 subprogramHeader
 subprogramType
 subrangeType
 substring - of another string
 succ - successor function
-Sys
-Sys.Exec
-Sys.FetchArg
-Sys.GetComputerName
-Sys.GetEnv
-Sys.GetPid
-Sys.GetUserName
-Sys.Nargs
+% Sys
+% Sys.Exec
+% Sys.FetchArg
+% Sys.GetComputerName
+% Sys.GetEnv
+% Sys.GetPid
+% Sys.GetUserName
+% Sys.Nargs
 sysclock - millisecs used procedure
 % system - statement (procedure? - John)
 % tag - statement
 takepic - graphics procedure
 % tell - file statement
-Text
-Text.Cls
-Text.Color
-Text.ColorBack
-Text.Colour
-Text.ColourBack
-Text.Locate
-Text.LocateXY
-Text.maxcol
-Text.maxrow
-Text.WhatCol
-Text.WhatColor
-Text.WhatColorBack
-Text.WhatColour
-Text.WhatColourBack
-Text.WhatRow
-Time
-Time.Date
-Time.DateSec
-Time.Delay
-Time.Elapsed
-Time.ElapsedCPU
-Time.PartsSec
-Time.Sec
-Time.SecDate
-Time.SecParts
+% Text
+% Text.Cls
+% Text.Color
+% Text.ColorBack
+% Text.Colour
+% Text.ColourBack
+% Text.Locate
+% Text.LocateXY
+% Text.maxcol
+% Text.maxrow
+% Text.WhatCol
+% Text.WhatColor
+% Text.WhatColorBack
+% Text.WhatColour
+% Text.WhatColourBack
+% Text.WhatRow
+% Time
+% Time.Date
+% Time.DateSec
+% Time.Delay
+% Time.Elapsed
+% Time.ElapsedCPU
+% Time.PartsSec
+% Time.Sec
+% Time.SecDate
+% Time.SecParts
 time - time of day as a string procedure
 token - in input
 % true - boolean value (not false)
 type - declaration
-TypeConv
+% TypeConv
 typeSpec - type specification
 unchecked - compiler directive
 union - type
@@ -533,18 +552,18 @@ unqualified - export
 upper - bound
 % var - declaration
 variableReference - use of a variable
-View
-View.ClipAdd
-View.ClipOff
-View.ClipSet
-View.maxcolor
-View.maxcolour
-View.maxx
-View.maxy
-View.Set
-View.Update - flicker-free animation
-View.WhatDotColor
-View.WhatDotColour
+% View
+% View.ClipAdd
+% View.ClipOff
+% View.ClipSet
+% View.maxcolor
+% View.maxcolour
+% View.maxx
+% View.maxy
+% View.Set
+% View.Update - flicker-free animation
+% View.WhatDotColor
+% View.WhatDotColour
 % wait - block a process statement
 wallclock - seconds since 1/1/1970 procedure
 whatcol - cursor position function
@@ -555,18 +574,18 @@ whatcolourback - color of background function
 whatdotcolor - graphics function
 whatdotcolour - graphics function
 whatrow - cursor position function
-Window
-Window.Close
-Window.GetActive
-Window.GetPosition
-Window.GetSelect
-Window.Hide
-Window.Open
-Window.Select
-Window.Set
-Window.SetActive
-Window.SetPosition
-Window.Show
-Window.Update
+% Window
+% Window.Close
+% Window.GetActive
+% Window.GetPosition
+% Window.GetSelect
+% Window.Hide
+% Window.Open
+% Window.Select
+% Window.Set
+% Window.SetActive
+% Window.SetPosition
+% Window.Show
+% Window.Update
 % write - file statement
 % xor - exclusive "or" operator

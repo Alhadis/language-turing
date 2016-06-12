@@ -24,6 +24,8 @@ repository:
 			{ include: "#process"       }
 			{ include: "#class"         }
 			{ include: "#function-call" }
+			{ include: "#stdlib"        }
+			{ include: "#unqualified"   }
 		]
 
 
@@ -145,11 +147,19 @@ repository:
 		contentName: "meta.function-call.arguments.turing"
 		beginCaptures:
 			1: name: "entity.function.name.turing"
-			2: patterns: [match: "\\.", name: "punctuation.separator.method.turing"]
+			2: patterns: [include: "#function-name"]
 			3: name: "punctuation.definition.arguments.begin.turing"
 		endCaptures:
 			0: name: "punctuation.definition.arguments.end.turing"
 		patterns: [include: "$self"]
+	
+	
+	# Function name: Wrapper for bundled inclusions
+	"function-name":
+		patterns: [
+			{include: "#stdlib"}
+			{match: "\\.", name: "punctuation.separator.method.turing"}
+		]
 		
 	
 	# Keywords
@@ -408,3 +418,314 @@ repository:
 			{match: "not=|~=", name: "keyword.operator.logical.not.turing"}
 			{match: ":",       name: "punctuation.separator.key-value.turing"}
 		]
+
+
+	# Standard library
+	stdlib:
+		patterns: [
+			{include: "#modules"}
+		]
+	
+	
+	# Modules
+	# match: "\\b(____)\\b(?:(\\.)(________)?\\b)?"
+	modules:
+		patterns: [{
+			
+			# Concurrency
+			match: "\\b(Concurrency)\\b(?:(\\.)(empty|[gs]etpriority|simutime)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.$3.turing"
+		},{
+			
+			# Config
+			match: "\\b(Config)\\b(?:(\\.)(Display|Lang|Machine)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Dir
+			match: "\\b(Dir)\\b(?:(\\.)(Change|Close|Create|Current|Delete|Get|GetLong|Open)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Draw
+			match: "\\b(Draw)\\b(?:(\\.)(Arc|Box|Cls|Dot|Fill|FillArc|FillBox|FillMapleLeaf|FillOval|FillPolygon|FillStar|Line|MapleLeaf|Oval|Polygon|Star|Text)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Error
+			match: "\\b(Error)\\b(?:(\\.)(Last|LastMsg|LastStr|Msg|Str|Trip)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# File
+			match: "\\b(File)\\b(?:(\\.)(Copy|Delete|DiskFree|Exists|Rename|Status)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Font
+			match: "\\b(Font)\\b(?:(\\.)(Draw|Free|GetName|GetSize|GetStyle|Name|New|Sizes|StartName|StartSize|Width)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# GUI
+			match: """(?x)\\b(GUI)\\b(?:(\\.)
+				(AddLine|AddText|Alert|Alert2|Alert3|AlertFull|Choose|ChooseFull|ClearText|CloseWindow|CreateButton|CreateButtonFull
+				|CreateCanvas|CreateCanvasFull|CreateCheckBox|CreateCheckBoxFull|CreateFrame|CreateHorizontalScrollBar|CreateHorizontalScrollBarFull
+				|CreateHorizontalSlider|CreateLabel|CreateLabelFull|CreateLabelledFrame|CreateLine|CreateMenu|CreateMenuItem|CreateMenuItemFull
+				|CreatePicture|CreatePictureButton|CreatePictureButtonFull|CreatePictureRadioButton|CreatePictureRadioButtonFull|CreateRadioButton
+				|CreateRadioButtonFull|CreateTextBox|CreateTextBoxFull|CreateTextField|CreateTextFieldFull|CreateVerticalScrollBar|CreateVerticalScrollBarFull
+				|CreateVerticalSlider|Disable|Dispose|DrawArc|DrawBox|DrawCls|DrawDot|DrawFill|DrawFillArc|DrawFillBox|DrawFillMapleLeaf|DrawFillOval
+				|DrawFillPolygon|DrawFillStar|DrawLine|DrawMapleLeaf|DrawOval|DrawPolygon|DrawStar|DrawText|Enable|FontDraw|GetCheckBox|GetEventTime
+				|GetEventWidgetID|GetEventWindow|GetHeight|GetMenuBarHeight|GetScrollBarWidth|GetSliderValue|GetText|GetVersion|GetWidth|GetX|GetY|Hide
+				|HideMenuBar|OpenFile|OpenFileFull|PicDraw|PicNew|PicScreenLoad|PicScreenSave|ProcessEvent|Quit|Refresh|SaveFile|SaveFileFull|SelectRadio
+				|SetActive|SetBackgroundColor|SetBackgroundColour|SetCheckBox|SetDefault|SetDisplayWhenCreated|SetKeyEventHandler|SetLabel|SetMouseEventHandler
+				|SetNullEventHandler|SetPosition|SetPositionAndSize|SetScrollAmount|SetSelection|SetSize|SetSliderMinMax|SetSliderReverse|SetSliderSize
+				|SetSliderValue|SetText|SetXOR|Show|ShowMenuBar)?\\b)?
+			"""
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Input
+			match: "\\b(Input)\\b(?:(\\.)(getch|getchar|hasch|KeyDown|Pause)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Joystick
+			match: "\\b(Joystick)\\b(?:(\\.)(GetInfo)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Keyboard
+			match: "\\b(Keyboard)\\b(?:(\\.)(\\w+)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: patterns: [include: "#key-constants"]
+		},{
+			
+			# Limits
+			match: "\\b(Limits)\\b(?:(\\.)(DefaultFW|DefaultEW|minint|maxint|minnat|maxnat)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Math
+			match: "(?x)\\b(Math)\\b(?:(\\.)(?:(PI|E)|(Distance|DistancePointLine)|(\\w+))?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.constant.${3:/downcase}.turing"
+				4: name: "support.function.${4:/downcase}.turing"
+				5: patterns: [include: "#math-routines"]
+		},{
+			
+			# Mouse
+			match: "\\b(Mouse)\\b(?:(\\.)(ButtonChoose|ButtonMoved|ButtonWait|Where)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Music
+			match: "\\b(Music)\\b(?:(\\.)(Play|PlayFile|PlayFileStop|Sound|SoundOff)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Net
+			match: """(?x)
+				\\b(Net)\\b(?:(\\.)
+				(BytesAvailable|CharAvailable|CloseConnection|HostAddressFromName|HostNameFromAddress
+				|LineAvailable|LocalAddress|LocalName|OpenConnection|OpenURLConnection|TokenAvailable
+				|WaitForConnection)?\\b)?"""
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# PC
+			match: "\\b(PC)\\b(?:(\\.)(ParallelGet|ParallelPut)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Pic
+			match: """(?x)
+				\\b(Pic)\\b(?:(\\.)
+				(Blend|Blur|Draw|DrawFrames|DrawFramesBack|DrawSpecial|DrawSpecialBack|FileNew
+				|FileNewFrames|Flip|Frames|Free|Height|Mirror|New|Rotate|Save|Scale|ScreenLoad
+				|ScreenSave|SetTransparentColou?r|Width)?
+				\\b)?"""
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Rand
+			match: "\\b(Rand)\\b(?:(\\.)(Int|Next|Real|Reset|Seed|Set)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# RGB
+			match: "\\b(RGB)\\b(?:(\\.)(AddColou?r|[GS]etColou?r|maxcolou?r)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Sprite
+			match: "\\b(Sprite)\\b(?:(\\.)(Animate|ChangePic|Free|Hide|New|SetFrameRate|SetHeight|SetPosition|Show)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Stream
+			match: "\\b(Stream)\\b(?:(\\.)(eof|Flush|FlushAll)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Str
+			match: "\\b(Str)\\b(?:(\\.)(\\w+)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: patterns: [include: "#str-routines"]
+		},{
+			
+			# Sys
+			match: "\\b(Sys)\\b(?:(\\.)(Exec|FetchArg|GetComputerName|GetEnv|GetPid|GetUserName|Nargs)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Text
+			match: "\\b(Text)\\b(?:(\\.)(Cls|Colou?r|Colou?rBack|Locate|LocateXY|maxcol|maxrow|WhatCol|WhatColou?r|WhatColou?rBack|WhatRow)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Time
+			match: "\\b(Time)\\b(?:(\\.)(Date|DateSec|Delay|Elapsed|ElapsedCPU|PartsSec|Sec|SecDate|SecParts)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# TypeConv
+			match: "\\b(TypeConv)\\b(?:(\\.)(\\w+)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: patterns: [include: "#typeconv-routines"]
+		},{
+			
+			# View
+			match: "\\b(View)\\b(?:(\\.)(ClipAdd|ClipOff|ClipSet|maxcolou?r|maxx|maxy|Set|Update|WhatDotColou?r)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
+			# Window
+			match: "\\b(Window)\\b(?:(\\.)(Close|GetActive|GetPosition|GetSelect|Hide|Open|Select|Set|SetActive|SetPosition|Show|Update)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		}]
+
+
+	# Routines/constants exported unqualified
+	unqualified:
+		patterns: [
+			{ include: "#key-constants" }
+			{ include: "#math-routines" }
+			{ include: "#str-routines"  }
+			{ include: "#typeconv-routines"}
+		]
+
+	# Keyboard constants: http://compsci.ca/holtsoft/doc/keyboardmodule.html
+	"key-constants":
+		name: "support.constant.keyboard.turing"
+		match: """(?x)\\b(?:
+			(?:KEY|ORD)_(?:
+				F1[0-2]|F[1-9]|CTRL_[A-Z]|ALT_[A-Z0-9]|(?:CTRL|ALT|SHIFT)_(?:F1[0-2]|F[1-9])|
+				ALT(?:_EQUALS|_MINUS)?|BACK_TAB|BACKSPACE|CTRL|DELETE|END|ENTER|ESC|HOME|INSERT|KEYPAD_5|PGDN|PGUP|SHIFT|SHIFT_TAB|TAB|
+				CTRL_(?:BACKSLASH|BACKSPACE|CARET|(?:UP|RIGHT|LEFT|DOWN)_ARROW|CLOSE_BRACKET|DELETE|END|HOME|INSERT|OPEN_BRACKET|PGDN|PGUP|UNDERSCORE)|
+				(?:UP|RIGHT|LEFT|DOWN)_ARROW)
+			|
+			ORD_(?:
+				AMPERSAND|APOSTROPHE|ASTERISK|BACKSLASH|BAR|CARET|COLON|COMMA|DOT|EQUALS|(?:GREATER|LESS)_THAN|
+				(?:CLOSE|OPEN)_(?:BRACE|BRACKET|PARENTHESIS)|(?:EXCALAMATION|HAS|QUESTION|QUOTATION)_MARK|MINUS|
+				(?:AT|DOLLAR|PERCENT)_SIGN|PERIOD|PLUS|SEMICOLON|SINGLE_QUOTE|SLASH|SPACE|TILDE|UNDERSCORE|[A-Z0-9]|LOWER_[A-Z])
+			)\\b
+		"""
+
+	# Math routines: http://compsci.ca/holtsoft/doc/mathmodule.html
+	"math-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(abs|arccos|arccosd|arcsin|arcsind|arctan|arctand|cos|cosd|exp|ln|max|min|sign|sin|sind|tan|tand|sqrt)\\b"
+
+	# Str routines: http://compsci.ca/holtsoft/doc/strmodule.html
+	"str-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(Lower|Upper|Trim|index|length|repeat)\\b"
+
+	# TypeConv module: http://compsci.ca/holtsoft/doc/typeconvmodule.html
+	"typeconv-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(ceil|chr|erealstr|floor|frealstr|intreal|intstr|natreal|natstr|ord|realstr|round|strint|strintok|strnat|strnatok|strreal|strrealok)\\b"
