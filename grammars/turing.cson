@@ -13,6 +13,7 @@ repository:
 			{ include: "#string"        }
 			{ include: "#numbers"       }
 			{ include: "#for"           }
+			{ include: "#cc"            }
 			{ include: "#case"          }
 			{ include: "#function"      }
 			{ include: "#keywords"      }
@@ -159,6 +160,15 @@ repository:
 			match: "\\b(skip)\\b"
 			name: "constant.language.skip.turing"
 		}]
+
+
+	# Conditional compilation
+	cc:
+		name: "meta.preprocessor.$3.turing"
+		match: "^\\s*((#)((?:end\\s+)?if|elsif|else))"
+		captures:
+			1: name: "keyword.control.directive.conditional.turing"		
+			2: name: "punctuation.definition.directive.turing"
 
 
 	# For loops

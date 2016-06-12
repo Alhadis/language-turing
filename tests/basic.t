@@ -10,6 +10,13 @@ put "The first word is: ", firstWord ("Henry Hudson")
 	% The output is Henry.
 
 
+% Conditional compilation
+#if stats and debug then
+	var count : array 1 .. 5 of real
+	var message : string
+#else
+	put "Debugging message"
+#end if
 
 case mark of
 	label 9, 10 :   put "Excellent"
