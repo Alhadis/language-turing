@@ -66,23 +66,23 @@ repository:
 		name: "meta.function.turing"
 		begin: """(?x)
 			\\b
-			(function|fcn)  # 1: storage.type.turing
+			(function|fcn)      # 1: storage.type.turing
 			(?:
 				\\s+
-				(pervasive) # 2: storage.modifier.pervasive.turing
+				(pervasive|\\*) # 2: storage.modifier.pervasive.turing
 			)?
 			\\s+
-			(\\w+)          # 3: entity.name.function.turing
+			(\\w+)              # 3: entity.name.function.turing
 			\\s+
-			(               # 4: meta.function.parameters.turing
-				(\\()       # 5: punctuation.definition.parameters.begin.turing
-				(.*)        # 6: include: “#param-declarations”
-				(\\))       # 7: punctuation.definition.parameters.end.turing
+			(                   # 4: meta.function.parameters.turing
+				(\\()           # 5: punctuation.definition.parameters.begin.turing
+				(.*)            # 6: include: “#param-declarations”
+				(\\))           # 7: punctuation.definition.parameters.end.turing
 			)
 			\\s*
-			(:)             # 8: punctuation.separator.key-value.turing
+			(:)                 # 8: punctuation.separator.key-value.turing
 			\\s*
-			(\\w+)          # 9: storage.type.type-spec.turing
+			(\\w+)              # 9: storage.type.type-spec.turing
 		"""
 		end: "\\b(end)\\s+(\\3)"
 		patterns: [{
