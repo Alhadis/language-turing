@@ -76,25 +76,29 @@ repository:
 		name: "meta.function.turing"
 		begin: """(?x)
 			\\b
-			(function|fcn)      # 1: storage.type.turing
+			(?:
+				(body)          # 1: storage.modifier.body.turing
+				\\s+
+			)?
+			(function|fcn)      # 2: storage.type.turing
 			(?:
 				\\s+
-				(pervasive|\\*) # 2: storage.modifier.pervasive.turing
+				(pervasive|\\*) # 3: storage.modifier.pervasive.turing
 			)?
 			\\s+
-			(\\w+)              # 3: entity.name.function.turing
-			\\s+
-			(                   # 4: meta.function.parameters.turing
-				(\\()           # 5: punctuation.definition.parameters.begin.turing
-				(.*)            # 6: include: “#param-declarations”
-				(\\))           # 7: punctuation.definition.parameters.end.turing
+			(\\w+)              # 4: entity.name.function.turing
+			\\s*
+			(                   # 5: meta.function.parameters.turing
+				(\\()           # 6: punctuation.definition.parameters.begin.turing
+				(.*)            # 7: include: “#param-declarations”
+				(\\))           # 8: punctuation.definition.parameters.end.turing
 			)
 			\\s*
-			(:)                 # 8: punctuation.separator.key-value.turing
+			(:)                 # 9: punctuation.separator.key-value.turing
 			\\s*
-			(\\w+)              # 9: storage.type.type-spec.turing
+			(\\w+)              # 10: storage.type.type-spec.turing
 		"""
-		end: "\\b(end)\\s+(\\3)"
+		end: "\\b(end)\\s+(\\4)"
 		patterns: [{
 			
 			# pre|init|post clause
@@ -108,15 +112,16 @@ repository:
 			},{ include: "$self" }
 		]
 		beginCaptures:
-			1: name: "storage.type.turing"
-			2: name: "storage.modifier.pervasive.turing"
-			3: name: "entity.name.function.turing"
-			4: name: "meta.function.parameters.turing"
-			5: name: "punctuation.definition.parameters.begin.turing"
-			6: patterns: [include: "#param-declarations"]
-			7: name: "punctuation.definition.parameters.end.turing"
-			8: name: "punctuation.separator.key-value.turing"
-			9: name: "storage.type.type-spec.turing"
+			1: name: "storage.modifier.body.turing"
+			2: name: "storage.type.turing"
+			3: name: "storage.modifier.pervasive.turing"
+			4: name: "entity.name.function.turing"
+			5: name: "meta.function.parameters.turing"
+			6: name: "punctuation.definition.parameters.begin.turing"
+			7: patterns: [include: "#param-declarations"]
+			8: name: "punctuation.definition.parameters.end.turing"
+			9: name: "punctuation.separator.key-value.turing"
+			10: name: "storage.type.type-spec.turing"
 		endCaptures:
 			1: name: "keyword.control.end.turing"
 			2: name: "entity.name.function.turing"
@@ -227,14 +232,14 @@ repository:
 	# Procedure declaration
 	procedure:
 		name: "meta.scope.$1.procedure.turing"
-		begin: "\\b(?:(deferred)\\s+)?(procedure|proc)\\s+(\\w+)"
+		begin: "\\b(?:(deferred|body)\\s+)?(procedure|proc)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\3)"
 		patterns: [
 			{include: "#parameters"}
 			{include: "$self"}
 		]
 		beginCaptures:
-			1: name: "storage.modifier.deferred.turing"
+			1: name: "storage.modifier.$1.turing"
 			2: name: "storage.type.function.turing"
 			3: name: "entity.name.function.turing"
 		endCaptures:

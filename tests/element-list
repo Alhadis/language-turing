@@ -16,7 +16,7 @@ array - type
 % begin - statement √
 bind - declaration
 bits - extraction
-body - declaration
+% body - declaration
 % boolean - true-false type
 % break - debugger pause statement
 buttonchoose - switch mouse modes
