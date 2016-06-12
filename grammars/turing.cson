@@ -19,6 +19,7 @@ repository:
 			{ include: "#variables"     }
 			{ include: "#operators"     }
 			{ include: "#procedure"     }
+			{ include: "#process"       }
 			{ include: "#function-call" }
 		]
 
@@ -205,17 +206,7 @@ repository:
 		begin: "\\b(procedure|proc)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\2)"
 		patterns: [
-			{
-				name: "meta.function.parameters.turing"
-				begin: "\\G\\s*(\\()"
-				end: "\\)"
-				beginCaptures: 1: name: "punctuation.definition.arguments.begin.turing"
-				endCaptures:   0: name: "punctuation.definition.arguments.end.turing"
-				patterns: [
-					{include: "$self"}
-					{match: "\\w+", name: "variable.parameter.function.turing"}
-				]
-			}
+			{include: "#parameters"}
 			{include: "$self"}
 		]
 		beginCaptures:
@@ -224,6 +215,38 @@ repository:
 		endCaptures:
 			1: name: "keyword.control.end.turing"
 			2: name: "entity.name.function.turing"
+	
+	
+	# Process statement
+	process:
+		name: "meta.scope.process.turing"
+		begin: "\\b(process)(?:\\s+(pervasive|\\*)(?=\\s))?\\s+(\\w+)"
+		end:   "\\b(end)\\s+(\\3)"
+		patterns: [
+			{include: "#parameters"}
+			{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "storage.type.function.turing"
+			2: name: "storage.modifier.pervasive.turing"
+			3: name: "entity.name.function.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "entity.name.function.turing"
+	
+	
+	# Bracketed parameter blocks used in procedure/process definitions
+	parameters:
+		name: "meta.function.parameters.turing"
+		begin: "\\G\\s*(\\()"
+		end: "\\)"
+		beginCaptures: 1: name: "punctuation.definition.arguments.begin.turing"
+		endCaptures:   0: name: "punctuation.definition.arguments.end.turing"
+		patterns: [
+			{include: "$self"}
+			{match: "\\w+", name: "variable.parameter.function.turing"}
+		]
+	
 	
 
 	# Variables

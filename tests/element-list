@@ -393,7 +393,7 @@ pred - predecessor function
 prefix - operator
 % procedure - declaration
 % procedureCall - statement
-process - declaration
+% process - declaration
 program - a (main) program
 % put - statement
 % quit - fail statement
