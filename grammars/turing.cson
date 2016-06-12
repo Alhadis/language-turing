@@ -19,6 +19,7 @@ repository:
 			{ include: "#keywords"      }
 			{ include: "#variables"     }
 			{ include: "#operators"     }
+			{ include: "#forward"       }
 			{ include: "#procedure"     }
 			{ include: "#process"       }
 			{ include: "#class"         }
@@ -227,6 +228,21 @@ repository:
 			3: name: "keyword.operator.of.turing"
 		endCaptures:
 			1: name: "keyword.control.end.case.turing"
+
+
+	# Forward procedure
+	forward:
+		name: "meta.forward.procedure.turing"
+		begin: "\\b(forward)\\s+(procedure|proc)\\s+(\\w+)"
+		end:   "(?=$|%|/\\*)"
+		beginCaptures:
+			1: name: "storage.modifier.$1.turing"
+			2: name: "storage.type.function.turing"
+			3: name: "entity.name.function.turing"
+		patterns: [
+			{include: "#parameters"}
+			{include: "$self"}
+		]
 
 
 	# Procedure declaration

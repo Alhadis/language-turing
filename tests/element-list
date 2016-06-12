@@ -154,7 +154,7 @@ Font.StartSize
 Font.Width
 % for - statement √
 % fork - statement
-forward - subprogram declaration
+% forward - subprogram declaration
 frealstr - real-to-string function
 % free - statement
 % function - declaration
