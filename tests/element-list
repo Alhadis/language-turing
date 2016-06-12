@@ -30,7 +30,7 @@ char - type
 cheat - type cheating
 checked - compiler directive
 chr - integer-to-character function
-class - declaration
+% class - declaration √
 clock - millisecs used procedure
 % close - file statement
 cls - clear screen graphics procedure
@@ -57,7 +57,7 @@ cos - cosine function (radians)
 cosd - cosine function (degrees)
 date - procedure
 declaration - create a variable
-deferred - subprogram declaration
+% deferred - subprogram declaration
 delay - procedure
 Dir
 Dir.Change
@@ -127,7 +127,7 @@ explicitRealConstant - real literal
 explicitStringConstant - string literal
 explicitTrueFalseConstant - boolean literal
 expn - expression
-export - list
+% export - list
 external - declaration
 % false - boolean value (not true)
 fetcharg - fetch argument function
@@ -264,16 +264,16 @@ hasch - has character function
 id - (identifier) name of an item in a program
 % #if - used for conditional compilation
 % if - statement √
-implement by - clause
-implement - clause
-import - list
+% implement by - clause
+% implement - clause
+% import - list
 in - member of a set
 include - source files
 index - find pattern in string function
 indexType
 indirection - operator (@)
 infix - operator
-inherit - inheritance clause
+% inherit - inheritance clause
 init - array initialization
 Input
 Input.getch
@@ -311,7 +311,7 @@ minint - minimum integer function
 minnat - minimum natural number function
 mod - modulo operator
 module - declaration
-monitor - declaration
+% monitor - declaration
 Mouse
 Mouse.ButtonChoose
 Mouse.ButtonMoved

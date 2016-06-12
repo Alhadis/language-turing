@@ -21,6 +21,7 @@ repository:
 			{ include: "#operators"     }
 			{ include: "#procedure"     }
 			{ include: "#process"       }
+			{ include: "#class"         }
 			{ include: "#function-call" }
 		]
 
@@ -59,6 +60,14 @@ repository:
 		patterns: [
 			{name: "constant.numeric.float.turing", match: "\\b\\d+\\.\\d+\\b"}
 			{name: "constant.numeric.int.turing",   match: "\\b\\d+\\b"}
+		]
+	
+	
+	# List of named values
+	list:
+		patterns: [
+			{match: "\\w+", name: "variable.name.turing"}
+			{match: ",",    name: "meta.delimiter.object.comma.turing"}
 		]
 	
 	
@@ -155,6 +164,11 @@ repository:
 			match: "\\b(assert|begin|break|close|exit|fork|free|get|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
 			name: "keyword.other.statement.$1.turing"
 		},{
+			
+			# Modifiers
+			match: "\\b(monitor)\\b"
+			name: "storage.modifier.$1.turing"
+		},{
 		
 			# Skip (used in get/put statements)
 			match: "\\b(skip)\\b"
@@ -212,16 +226,17 @@ repository:
 
 	# Procedure declaration
 	procedure:
-		name: "meta.scope.procedure.turing"
-		begin: "\\b(procedure|proc)\\s+(\\w+)"
-		end:   "\\b(end)\\s+(\\2)"
+		name: "meta.scope.$1.procedure.turing"
+		begin: "\\b(?:(deferred)\\s+)?(procedure|proc)\\s+(\\w+)"
+		end:   "\\b(end)\\s+(\\3)"
 		patterns: [
 			{include: "#parameters"}
 			{include: "$self"}
 		]
 		beginCaptures:
-			1: name: "storage.type.function.turing"
-			2: name: "entity.name.function.turing"
+			1: name: "storage.modifier.deferred.turing"
+			2: name: "storage.type.function.turing"
+			3: name: "entity.name.function.turing"
 		endCaptures:
 			1: name: "keyword.control.end.turing"
 			2: name: "entity.name.function.turing"
@@ -258,6 +273,56 @@ repository:
 		]
 	
 	
+	# Class declarations
+	class:
+		name: "meta.scope.class-block.turing"
+		begin: "^\\s*(class)\\s+(\\w+)"
+		end:   "\\b(end)\\s+(\\2)"
+		patterns: [
+			{include: "#class-innards"}
+			{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "storage.type.class.turing"
+			2: name: "entity.name.type.class.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "entity.name.type.class.turing"
+	
+	
+	# Various clauses for inheritance, importing/exporting, etc
+	"class-innards":
+		patterns: [{
+			
+			# Import/export
+			begin: "\\b(import|export)\\b"
+			end:   "(?=$|%|/\\*)"
+			beginCaptures:
+				1: name: "keyword.control.$1.turing"
+			patterns: [
+				{include: "#list"}
+				{include: "$self"}
+			]
+		},{
+			
+			# Inherited class
+			name: "meta.other.inherited-class.turing"
+			begin: "\\b(inherit)\\b"
+			end:   "\\w+"
+			beginCaptures: 1: name: "storage.modifier.inherit.turing"
+			endCaptures:   0: name: "entity.other.inherited-class.turing"
+			patterns: [include: "$self"]
+		},{
+			
+			# Implement/Implement by
+			name: "meta.other.$1.turing"
+			begin: "\\b(implement(?:\\s+by)?)\\b"
+			end:   "\\w+"
+			beginCaptures: 1: name: "storage.modifier.implements.turing"
+			endCaptures:   0: name: "entity.other.inherited-class.turing"
+			patterns: [include: "$self"]
+		}]
+	
 
 	# Variables
 	variables:
@@ -284,8 +349,7 @@ repository:
 				}
 				
 				# Variable names
-				{match: "\\w+", name: "variable.name.turing"}
-				{match: ",",    name: "meta.delimiter.object.comma.turing"}
+				{include: "#list"}
 			]
 		},{
 			
@@ -310,6 +374,7 @@ repository:
 		patterns: [
 			{match: "\\.\\.",  name: "punctuation.definition.range.turing"}
 			{match: ":=",      name: "punctuation.separator.key-value.assignment.turing"}
+			{match: "->",      name: "punctuation.separator.class.accessor.turing"}
 			{match: "\\+",     name: "keyword.operator.arithmetic.add.turing"}
 			{match: "-",       name: "keyword.operator.arithmetic.subtract.turing"}
 			{match: "\\*",     name: "keyword.operator.arithmetic.multiply.turing"}
