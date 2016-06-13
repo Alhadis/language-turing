@@ -9,6 +9,18 @@ end firstWord
 put "The first word is: ", firstWord ("Henry Hudson")
 	% The output is Henry.
 
+% Integer literals
+2#1
+2#11
+16#a
+16#FF
+16#FFFF
+8#10
+
+
+% Character constants
+var c : char := 'H'
+var d : char (2) := 'Hi'
 
 % Character escaping
 'a\"a'

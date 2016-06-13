@@ -120,9 +120,9 @@ collection - declaration
 % Exceptions
 % exit - statement
 % exp - exponentiation function
-explicitCharConstant - character literal
-explicitConstant - literal
-explicitIntegerConstant - integer literal
+% explicitCharConstant - character literal
+% explicitConstant - literal
+% explicitIntegerConstant - integer literal
 explicitRealConstant - real literal
 % explicitStringConstant - string literal
 % explicitTrueFalseConstant - boolean literal

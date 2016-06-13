@@ -15,6 +15,7 @@ repository:
 			{ include: "#for"           }
 			{ include: "#cc"            }
 			{ include: "#case"          }
+			{ include: "#types"         }
 			{ include: "#function"      }
 			{ include: "#keywords"      }
 			{ include: "#modifiers"     }
@@ -65,8 +66,10 @@ repository:
 	# Numbers
 	numbers:
 		patterns: [
-			{name: "constant.numeric.float.turing", match: "\\b\\d+\\.\\d+\\b"}
-			{name: "constant.numeric.int.turing",   match: "\\b\\d+\\b"}
+			{name: "constant.numeric.base-16.hex.turing", match: "16#[A-Fa-f0-9]+"}
+			{name: "constant.numeric.base-$1.turing",     match: "(\\d+)#\\d+"}
+			{name: "constant.numeric.float.turing",       match: "\\b\\d+\\.\\d+\\b"}
+			{name: "constant.numeric.int.turing",         match: "\\b\\d+\\b"}
 		]
 	
 	
@@ -225,10 +228,6 @@ repository:
 				2: name: "punctuation.definition.arguments.begin.turing"
 				4: name: "punctuation.definition.arguments.end.turing"
 		},{
-			# Types
-			match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of|string)\\b"
-			name: "storage.type.$1-type.turing"
-		},{
 			# Colour constants
 			match: """(?x)\\b
 				(black|blue|brightblue|brightcyan|brightgreen|brightmagenta|brightpurple|brightred
@@ -261,6 +260,12 @@ repository:
 			match: "\\b(external|flexible|opaque|register)\\b"
 			name: "storage.modifier.$1.turing"
 		}]
+
+
+	# Types
+	types:
+		match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of|string)\\b"
+		name: "storage.type.$1-type.turing"
 
 
 	# Conditional compilation
@@ -449,13 +454,14 @@ repository:
 			# Declaration
 			name: "meta.variable-declaration.turing"
 			begin: "\\b(var|const)\\s+"
-			end:   "(:=?)\\s*(\\w*)\\s*(:=)?"
+			end:   "(:=?)\\s*((\\w+(?:\\s*\\(\\s*\\d+\\s*\\))?))?\\s*(:=)?"
 			beginCaptures:
 				1: name: "storage.type.$1.turing"
 			endCaptures:
 				1: name: "punctuation.separator.key-value.turing"
 				2: name: "storage.type.type-spec.turing"
-				3: name: "punctuation.separator.key-value.turing"
+				3: patterns: [include: "#types"]
+				4: name: "punctuation.separator.key-value.turing"
 			patterns: [
 				
 				# Object-oriented Turing: Additional keywords
@@ -466,7 +472,7 @@ repository:
 						2: name: "storage.modifier.register.oot.turing"
 				}
 				
-				# Variable names
+				{include: "#types"}
 				{include: "#list"}
 			]
 		},{
