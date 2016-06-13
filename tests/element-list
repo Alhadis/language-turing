@@ -116,8 +116,8 @@ equivalence - of types
 % Error.Msg
 % Error.Str
 % Error.Trip
-ErrorNum
-Exceptions
+% ErrorNum
+% Exceptions
 % exit - statement
 % exp - exponentiation function
 explicitCharConstant - character literal

@@ -544,6 +544,14 @@ repository:
 				3: name: "support.function.${3:/downcase}.turing"
 		},{
 			
+			# ErrorNum/Exceptions
+			match: "\\b(ErrorNum|Exceptions)\\b(?:(\\.)(\\w+)?\\b)?"
+			captures:
+				1: name: "support.class.${1:/downcase}.turing"
+				2: name: "meta.delimiter.property.period.turing"
+				3: name: "support.function.${3:/downcase}.turing"
+		},{
+			
 			# File
 			match: "\\b(File)\\b(?:(\\.)(Copy|Delete|DiskFree|Exists|Rename|Status)?\\b)?"
 			captures:
