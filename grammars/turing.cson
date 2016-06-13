@@ -200,11 +200,6 @@ repository:
 			match: "\\b(assert|begin|break|close|exit|fork|free|get|init|invariant|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
 			name: "keyword.other.statement.$1.turing"
 		},{
-			
-			# Modifiers
-			match: "\\b(monitor)\\b"
-			name: "storage.modifier.$1.turing"
-		},{
 		
 			# Character type of specified length
 			match: "\\b(char)\\s*(\\()(\\d+)(\\))"
@@ -359,10 +354,10 @@ repository:
 			2: name: "storage.type.handler.turing"
 	
 	
-	# Class/module declarations
+	# Class, module and monitor declarations
 	class:
 		name: "meta.scope.$1-block.turing"
-		begin: "^\\s*(class|module)\\s+(\\w+)"
+		begin: "^\\s*(class|module|monitor)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\2)"
 		patterns: [
 			{include: "#class-innards"}

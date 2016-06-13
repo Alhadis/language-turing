@@ -51,3 +51,40 @@ var c,d : complex .value :=complex.constant ( 1, 5 )
 	% c and d become the complex number (1,5)
 var e : complex .value := complex.add (c, d )
 	% e becomes the complex number (2,10)
+
+
+
+
+monitor resource
+	export request, release
+
+	var available : boolean := true
+	var nowAvailable : condition
+
+	procedure request
+		if not available then
+			wait nowAvailable   % Go to sleep
+		end if
+		assert available
+		available := false      % Allocate resource
+	end request
+
+	procedure release
+		assert not available    % Resource is allocated
+		available := true       % Free the resource
+		signal nowAvailable % Wake up one process
+		% If any are sleeping
+	end release
+
+end resource
+process worker
+	loop
+		…
+		resource.request        % Block until available
+		… use resource …
+		resource.release
+	end loop
+end worker
+
+fork worker             % Activate one worker
+fork worker             % Activate another worker
