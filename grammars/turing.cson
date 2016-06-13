@@ -206,6 +206,14 @@ repository:
 			name: "storage.modifier.$1.turing"
 		},{
 		
+			# Colour constants
+			match: """(?x)\\b
+				(black|blue|brightblue|brightcyan|brightgreen|brightmagenta|brightpurple|brightred
+				|brightwhite|brown|colou?r[bf]g|cyan|darkgr[ae]y|gr[ae]y|green|magenta|purple|red
+				|white|yellow)\\b"""
+			name: "constant.other.colour.turing"
+		},{
+		
 			# Skip (used in get/put statements)
 			match: "\\b(skip)\\b"
 			name: "constant.language.skip.turing"
