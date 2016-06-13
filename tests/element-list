@@ -23,11 +23,11 @@ bind - declaration
 % buttonmoved - has a mouse event occurred
 % buttonwait - get a mouse event procedure
 % case - selection statement √
-catenation (+) - joining together strings
+% catenation (+) - joining together strings
 % ceil - real-to-integer function
 char(n) - type
 char - type
-cheat - type cheating
+% cheat - type cheating
 checked - compiler directive
 % chr - integer-to-character function
 % class - declaration √
@@ -56,7 +56,7 @@ condition - declaration
 % cos - cosine function (radians)
 % cosd - cosine function (degrees)
 % date - procedure
-declaration - create a variable
+% declaration - create a variable
 % deferred - subprogram declaration
 % delay - procedure
 % Dir
@@ -126,7 +126,7 @@ explicitIntegerConstant - integer literal
 explicitRealConstant - real literal
 explicitStringConstant - string literal
 explicitTrueFalseConstant - boolean literal
-expn - expression
+% expn - expression
 % export - list
 external - declaration
 % false - boolean value (not true)
@@ -289,9 +289,9 @@ flexible - array initialization
 % in - member of a set
 % include - source files
 % index - find pattern in string function
-indexType
-indirection - operator (@)
-infix - operator
+indexType -
+% indirection - operator (@)
+% infix - operator
 % inherit - inheritance clause
 % init - array initialization
 % Input
@@ -304,7 +304,7 @@ int - integer type
 intn - n-byte integer type
 % intreal - integer-to-real function
 % intstr - integer-to-string function
-invariant - assertion
+% invariant - assertion
 % Joystick
 % Joystick.GetInfo
 % Keyboard
@@ -409,7 +409,7 @@ post - assertion
 pre - assertion
 % precedence - of operators
 % pred - predecessor function
-prefix - operator
+% prefix - operator
 % procedure - declaration
 % procedureCall - statement
 % process - declaration
@@ -453,7 +453,7 @@ scalar - type
 self - pointer to current object
 separator - between tokens in a program
 set - type
-setConstructor
+setConstructor -
 % setpriority - procedure
 % setscreen - graphics procedure
 % shl - shift left operator
@@ -479,7 +479,7 @@ setConstructor
 % Sprite.SetPosition
 % Sprite.Show
 % sqrt - square root function
-standardType
+standardType -
 % statement
 % statementsAndDeclarations
 % Str
@@ -495,9 +495,9 @@ standardType
 % strnatok - string to natural number function
 % strreal - string-to-real function
 % strrealok - string-to-real function
-subprogramHeader
-subprogramType
-subrangeType
+subprogramHeader -
+subprogramType -
+subrangeType -
 % substring - of another string
 % succ - successor function
 % Sys
