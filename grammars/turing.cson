@@ -452,6 +452,9 @@ repository:
 			{match: ">",       name: "keyword.operator.logical.greater.turing"}
 			{match: "=",       name: "keyword.operator.logical.equal.turing"}
 			{match: "not=|~=", name: "keyword.operator.logical.not.turing"}
+			{match: "\\^",     name: "keyword.operator.pointer-following.turing"}
+			{match: "#",       name: "keyword.operator.type-cheat.turing"}
+			{match: "@",       name: "keyword.operator.indirection.turing"}
 			{match: ":",       name: "punctuation.separator.key-value.turing"}
 		]
 	
