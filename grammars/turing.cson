@@ -445,7 +445,7 @@ repository:
 			{match: "\\+",     name: "keyword.operator.arithmetic.add.turing"}
 			{match: "-",       name: "keyword.operator.arithmetic.subtract.turing"}
 			{match: "\\*",     name: "keyword.operator.arithmetic.multiply.turing"}
-			{match: "\\\\",    name: "keyword.operator.arithmetic.divide.turing"}
+			{match: "\\/",     name: "keyword.operator.arithmetic.divide.turing"}
 			{match: "<=",      name: "keyword.operator.logical.equal-or-less.subset.turing"}
 			{match: ">=",      name: "keyword.operator.logical.equal-or-greater.superset.turing"}
 			{match: "<",       name: "keyword.operator.logical.less.turing"}
