@@ -398,7 +398,7 @@ repository:
 			# Declaration
 			name: "meta.variable-declaration.turing"
 			begin: "\\b(var|const)\\s+"
-			end:   "(:)\\s*(\\w*)\\s*(:=)?"
+			end:   "(:=?)\\s*(\\w*)\\s*(:=)?"
 			beginCaptures:
 				1: name: "storage.type.$1.turing"
 			endCaptures:
