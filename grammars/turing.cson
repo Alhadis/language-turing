@@ -206,6 +206,17 @@ repository:
 			name: "storage.modifier.$1.turing"
 		},{
 		
+			# Character type of specified length
+			match: "\\b(char)\\s*(\\()(\\d+)(\\))"
+			name: "storage.type.$3-char.turing"
+			captures:
+				2: name: "punctuation.definition.arguments.begin.turing"
+				4: name: "punctuation.definition.arguments.end.turing"
+		},{
+			# Types
+			match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of)\\b"
+			name: "storage.type.$1.turing"
+		},{
 			# Colour constants
 			match: """(?x)\\b
 				(black|blue|brightblue|brightcyan|brightgreen|brightmagenta|brightpurple|brightred

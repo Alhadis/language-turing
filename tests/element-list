@@ -3,13 +3,13 @@
 
 % abs - absolute value function
 % addr - address of a variable
-addressint - type
+% addressint - type
 all - all members of a set
 % and - operator
 anyclass - the ancestor of all classes
 % arctan - arctangent function (radians)
 % arctand - arctangent function (degrees)
-array - type
+% array - type
 % assert - statement
 % assignability - of expression to variable
 % assignment - statement
@@ -25,8 +25,8 @@ bind - declaration
 % case - selection statement √
 % catenation (+) - joining together strings
 % ceil - real-to-integer function
-char(n) - type
-char - type
+% char(n) - type
+% char - type
 % cheat - type cheating
 checked - compiler directive
 % chr - integer-to-character function
@@ -104,10 +104,10 @@ condition - declaration
 % drawpolygon - graphics procedure
 % drawstar - graphics procedure
 % empty - condition function
-enum - enumerated type
-enumeratedValue - enumerated value
+% enum - enumerated type
+% enumeratedValue - enumerated value
 % eof - end-of-file function
-equivalence - of types
+% equivalence - of types
 % erealstr - real-to-string function
 % Error
 % Error.Last
@@ -289,7 +289,7 @@ flexible - array initialization
 % in - member of a set
 % include - source files
 % index - find pattern in string function
-indexType -
+% indexType -
 % indirection - operator (@)
 % infix - operator
 % inherit - inheritance clause
@@ -300,8 +300,8 @@ indexType -
 % Input.hasch
 % Input.KeyDown - get keyboard state
 % Input.Pause - pause for keystroke
-int - integer type
-intn - n-byte integer type
+% int - integer type
+% intn - n-byte integer type
 % intreal - integer-to-real function
 % intstr - integer-to-string function
 % invariant - assertion
@@ -343,10 +343,10 @@ lower - bound
 % Music.PlayFileStop
 % Music.Sound
 % Music.SoundOff
-named - type
+% named - type
 % nargs - number of arguments
-nat - natural number type
-natn - n-byte natural number type
+% nat - natural number type
+% natn - n-byte natural number type
 % natreal - natural number to real function
 % natstr - natural-number-to-string function
 % Net
@@ -404,9 +404,9 @@ opaque - type
 % Pic.Width
 % play - procedure
 % playdone - function
-pointer - type
-post - assertion
-pre - assertion
+% pointer - type
+% post - assertion
+% pre - assertion
 % precedence - of operators
 % pred - predecessor function
 % prefix - operator
@@ -429,8 +429,8 @@ pre - assertion
 % randomize - procedure
 % randseed - procedure
 % read - file statement
-real - the real number type
-realn - n-byte real number type
+% real - the real number type
+% realn - n-byte real number type
 % realstr - real-to-string function
 % record - type
 register - use machine register
@@ -448,12 +448,12 @@ register - use machine register
 % RGB.SetColor
 % RGB.SetColour
 % round - real-to-integer function
-scalar - type
+% scalar - type
 % seek - (file) statement
 self - pointer to current object
-separator - between tokens in a program
-set - type
-setConstructor -
+% separator - between tokens in a program
+% set - type
+% setConstructor -
 % setpriority - procedure
 % setscreen - graphics procedure
 % shl - shift left operator
@@ -479,7 +479,7 @@ setConstructor -
 % Sprite.SetPosition
 % Sprite.Show
 % sqrt - square root function
-standardType -
+% standardType -
 % statement
 % statementsAndDeclarations
 % Str
@@ -495,9 +495,9 @@ standardType -
 % strnatok - string to natural number function
 % strreal - string-to-real function
 % strrealok - string-to-real function
-subprogramHeader -
-subprogramType -
-subrangeType -
+% subprogramHeader -
+% subprogramType -
+% subrangeType -
 % substring - of another string
 % succ - successor function
 % Sys
@@ -540,18 +540,18 @@ subrangeType -
 % Time.SecDate
 % Time.SecParts
 % time - time of day as a string procedure
-token - in input
+% token - in input
 % true - boolean value (not false)
 % type - declaration
 % TypeConv
-typeSpec - type specification
+% typeSpec - type specification
 unchecked - compiler directive
 union - type
 unit - file containing module, monitor, or class
 unqualified - export
 upper - bound
 % var - declaration
-variableReference - use of a variable
+% variableReference - use of a variable
 % View
 % View.ClipAdd
 % View.ClipOff
