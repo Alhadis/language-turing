@@ -182,7 +182,7 @@ repository:
 		},{
 			
 			# Statements
-			match: "\\b(assert|begin|break|close|exit|fork|free|get|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
+			match: "\\b(assert|begin|break|close|exit|fork|free|get|init|invariant|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
 			name: "keyword.other.statement.$1.turing"
 		},{
 			

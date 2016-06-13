@@ -293,7 +293,7 @@ indexType
 indirection - operator (@)
 infix - operator
 % inherit - inheritance clause
-init - array initialization
+% init - array initialization
 % Input
 % Input.getch
 % Input.getchar
