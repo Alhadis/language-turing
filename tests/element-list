@@ -432,7 +432,7 @@ prefix - operator
 real - the real number type
 realn - n-byte real number type
 % realstr - real-to-string function
-record - type
+% record - type
 register - use machine register
 % rem - remainder operator
 % repeat - make copies of string:function
@@ -542,7 +542,7 @@ subrangeType
 % time - time of day as a string procedure
 token - in input
 % true - boolean value (not false)
-type - declaration
+% type - declaration
 % TypeConv
 typeSpec - type specification
 unchecked - compiler directive

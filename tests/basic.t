@@ -10,6 +10,16 @@ put "The first word is: ", firstWord ("Henry Hudson")
 	% The output is Henry.
 
 
+% Type
+type nameType : string ( 30 )
+type range : 0 .. 150
+type entry :
+	record
+		name : nameType
+		age : int
+	end record
+
+
 % Conditional compilation
 #if stats and debug then
 	var count : array 1 .. 5 of real

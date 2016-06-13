@@ -24,6 +24,8 @@ repository:
 			{ include: "#process"       }
 			{ include: "#handler"       }
 			{ include: "#class"         }
+			{ include: "#type"          }
+			{ include: "#record"        }
 			{ include: "#function-call" }
 			{ include: "#stdlib"        }
 		]
@@ -438,7 +440,28 @@ repository:
 			{match: "not=|~=", name: "keyword.operator.logical.not.turing"}
 			{match: ":",       name: "punctuation.separator.key-value.turing"}
 		]
+	
+	
+	# Type declaration
+	type:
+		match: "\\b(type)(?:\\s+(pervasive|\\*)(?=\\s))?\\s+(\\w+)"
+		captures:
+			1: name: "storage.type.turing"
+			2: name: "storage.modifier.pervasive.turing"
+			3: name: "entity.name.type.turing"
 
+	# Record declaration
+	record:
+		name: "meta.scope.record-block.turing"
+		begin: "\\b(record)\\b"
+		end: "\\b(end)\\s+(record)\\b"
+		patterns: [include: "$self"]
+		beginCaptures:
+			1: name: "storage.type.record.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "storage.type.record.turing"
+		
 
 	# Standard library
 	stdlib:
