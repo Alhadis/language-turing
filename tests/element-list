@@ -2,7 +2,7 @@
 % √ marks which statements should affect indent (- John)
 
 % abs - absolute value function
-addr - address of a variable
+% addr - address of a variable
 addressint - type
 all - all members of a set
 % and - operator
@@ -19,9 +19,9 @@ bits - extraction
 % body - declaration
 % boolean - true-false type
 % break - debugger pause statement
-buttonchoose - switch mouse modes
-buttonmoved - has a mouse event occurred
-buttonwait - get a mouse event procedure
+% buttonchoose - switch mouse modes
+% buttonmoved - has a mouse event occurred
+% buttonwait - get a mouse event procedure
 % case - selection statement √
 catenation (+) - joining together strings
 % ceil - real-to-integer function
@@ -31,14 +31,14 @@ cheat - type cheating
 checked - compiler directive
 % chr - integer-to-character function
 % class - declaration √
-clock - millisecs used procedure
+% clock - millisecs used procedure
 % close - file statement
-cls - clear screen graphics procedure
+% cls - clear screen graphics procedure
 collection - declaration
-color - text color graphics procedure
-colorback - background color procedure
-colour - text color graphics procedure
-colourback - background color procedure
+% color - text color graphics procedure
+% colorback - background color procedure
+% colour - text color graphics procedure
+% colourback - background color procedure
 % comment - remark statement
 % comparisonOperator
 % Concurrency
@@ -55,10 +55,10 @@ const - constant declaration
 constantReference - use of a constant
 % cos - cosine function (radians)
 % cosd - cosine function (degrees)
-date - procedure
+% date - procedure
 declaration - create a variable
 % deferred - subprogram declaration
-delay - procedure
+% delay - procedure
 % Dir
 % Dir.Change
 % Dir.Close
@@ -87,26 +87,26 @@ div - integer truncating division operator
 % Draw.Polygon
 % Draw.Star
 % Draw.Text
-drawarc - graphics procedure
-drawbox - graphics procedure
-drawdot - graphics procedure
-drawfill - graphics procedure
-drawfillarc - graphics procedure
-drawfillbox - graphics procedure
-drawfillmapleleaf - graphics procedure
-drawfilloval - graphics procedure
-drawfillpolygon - graphics procedure
-drawfillstar - graphics procedure
-drawline - graphics procedure
-drawmapleleaf - graphics procedure
-drawoval - graphics procedure
-drawpic - graphics procedure
-drawpolygon - graphics procedure
-drawstar - graphics procedure
-empty - condition function
+% drawarc - graphics procedure
+% drawbox - graphics procedure
+% drawdot - graphics procedure
+% drawfill - graphics procedure
+% drawfillarc - graphics procedure
+% drawfillbox - graphics procedure
+% drawfillmapleleaf - graphics procedure
+% drawfilloval - graphics procedure
+% drawfillpolygon - graphics procedure
+% drawfillstar - graphics procedure
+% drawline - graphics procedure
+% drawmapleleaf - graphics procedure
+% drawoval - graphics procedure
+% drawpic - graphics procedure
+% drawpolygon - graphics procedure
+% drawstar - graphics procedure
+% empty - condition function
 enum - enumerated type
 enumeratedValue - enumerated value
-eof - end-of-file function
+% eof - end-of-file function
 equivalence - of types
 % erealstr - real-to-string function
 % Error
@@ -130,7 +130,7 @@ expn - expression
 % export - list
 external - declaration
 % false - boolean value (not true)
-fetcharg - fetch argument function
+% fetcharg - fetch argument function
 % File
 % File.Copy
 % File.Delete
@@ -160,11 +160,11 @@ flexible - array initialization
 % function - declaration
 % functionCall
 % get - file statement
-getch - get character procedure
-getchar - get character function
-getenv - get environment function
-getpid - get process id function
-getpriority - function
+% getch - get character procedure
+% getchar - get character function
+% getenv - get environment function
+% getpid - get process id function
+% getpriority - function
 % GUI
 % GUI.AddLine
 % GUI.AddText
@@ -279,8 +279,8 @@ getpriority - function
 % GUI.Show
 % GUI.ShowMenuBar
 handler - exception handler
-hasch - has character function
-id - (identifier) name of an item in a program
+% hasch - has character function
+% id - (identifier) name of an item in a program
 % #if - used for conditional compilation
 % if - statement √
 % implement by - clause
@@ -311,23 +311,23 @@ invariant - assertion
 % length - of a string function
 % Limits
 % ln - natural logarithm function
-locate - procedure
-locatexy - graphics procedure
+% locate - procedure
+% locatexy - graphics procedure
 % loop - statement
 lower - bound
 % Math
 % max - maximum function
-maxcol - maximum column function
-maxcolor - graphics function
-maxcolour - graphics function
-maxint - maximum integer function
-maxnat - maximum natural number function
-maxrow - maximum row function
-maxx - graphics function
-maxy - graphics function
+% maxcol - maximum column function
+% maxcolor - graphics function
+% maxcolour - graphics function
+% maxint - maximum integer function
+% maxnat - maximum natural number function
+% maxrow - maximum row function
+% maxx - graphics function
+% maxy - graphics function
 % min - minimum function
-minint - minimum integer function
-minnat - minimum natural number function
+% minint - minimum integer function
+% minnat - minimum natural number function
 mod - modulo operator
 module - declaration
 % monitor - declaration
@@ -336,7 +336,7 @@ module - declaration
 % Mouse.ButtonMoved
 % Mouse.ButtonWait
 % Mouse.Where
-mousewhere
+% mousewhere
 % Music
 % Music.Play
 % Music.PlayFile
@@ -344,7 +344,7 @@ mousewhere
 % Music.Sound
 % Music.SoundOff
 named - type
-nargs - number of arguments
+% nargs - number of arguments
 nat - natural number type
 natn - n-byte natural number type
 % natreal - natural number to real function
@@ -370,9 +370,9 @@ opaque - type
 % open - file statement
 % or - operator
 % ord - character-to-integer function
-parallelget - parallel port function
-parallelput - parallel port procedure
-paramDeclaration - parameter declaration
+% parallelget - parallel port function
+% parallelput - parallel port procedure
+% paramDeclaration - parameter declaration
 % pause - statement
 % PC
 % PC.ParallelGet
@@ -402,13 +402,13 @@ paramDeclaration - parameter declaration
 % Pic.SetTransparentColor
 % Pic.SetTransparentColour
 % Pic.Width
-play - procedure
-playdone - function
+% play - procedure
+% playdone - function
 pointer - type
 post - assertion
 pre - assertion
-precedence - of operators
-pred - predecessor function
+% precedence - of operators
+% pred - predecessor function
 prefix - operator
 % procedure - declaration
 % procedureCall - statement
@@ -423,11 +423,11 @@ prefix - operator
 % Rand.Reset
 % Rand.Seed
 % Rand.Set
-rand - random real number procedure
-randint - random integer procedure
-randnext - procedure
-randomize - procedure
-randseed - procedure
+% rand - random real number procedure
+% randint - random integer procedure
+% randnext - procedure
+% randomize - procedure
+% randseed - procedure
 % read - file statement
 real - the real number type
 realn - n-byte real number type
@@ -454,20 +454,20 @@ self - pointer to current object
 separator - between tokens in a program
 set - type
 setConstructor
-setpriority - procedure
-setscreen - graphics procedure
+% setpriority - procedure
+% setscreen - graphics procedure
 shl - shift left operator
 shr - shift right operator
 % sign - function
 % signal - wake up a process statement
-simutime - simulated time function
+% simutime - simulated time function
 % sin - sine function (radians)
 % sind - sine function (degrees)
-sizeof - size of a type
-sizepic - graphics function
+% sizeof - size of a type
+% sizepic - graphics function
 % skip - used in get statement
 % skip - used in put statement
-sound - procedure
+% sound - procedure
 % Sprite
 % Sprite.Animate
 % Sprite.ChangePic
@@ -498,8 +498,8 @@ standardType
 subprogramHeader
 subprogramType
 subrangeType
-substring - of another string
-succ - successor function
+% substring - of another string
+% succ - successor function
 % Sys
 % Sys.Exec
 % Sys.FetchArg
@@ -508,10 +508,10 @@ succ - successor function
 % Sys.GetPid
 % Sys.GetUserName
 % Sys.Nargs
-sysclock - millisecs used procedure
+% sysclock - millisecs used procedure
 % system - statement (procedure? - John)
 % tag - statement
-takepic - graphics procedure
+% takepic - graphics procedure
 % tell - file statement
 % Text
 % Text.Cls
@@ -539,7 +539,7 @@ takepic - graphics procedure
 % Time.Sec
 % Time.SecDate
 % Time.SecParts
-time - time of day as a string procedure
+% time - time of day as a string procedure
 token - in input
 % true - boolean value (not false)
 type - declaration
@@ -565,15 +565,15 @@ variableReference - use of a variable
 % View.WhatDotColor
 % View.WhatDotColour
 % wait - block a process statement
-wallclock - seconds since 1/1/1970 procedure
-whatcol - cursor position function
-whatcolor - text color graphics function
-whatcolorback - color of background function
-whatcolour - text color graphics function
-whatcolourback - color of background function
-whatdotcolor - graphics function
-whatdotcolour - graphics function
-whatrow - cursor position function
+% wallclock - seconds since 1/1/1970 procedure
+% whatcol - cursor position function
+% whatcolor - text color graphics function
+% whatcolorback - color of background function
+% whatcolour - text color graphics function
+% whatcolourback - color of background function
+% whatdotcolor - graphics function
+% whatdotcolour - graphics function
+% whatrow - cursor position function
 % Window
 % Window.Close
 % Window.GetActive

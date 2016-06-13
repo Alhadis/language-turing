@@ -25,7 +25,6 @@ repository:
 			{ include: "#class"         }
 			{ include: "#function-call" }
 			{ include: "#stdlib"        }
-			{ include: "#unqualified"   }
 		]
 
 
@@ -291,7 +290,7 @@ repository:
 			2: name: "entity.name.function.turing"
 	
 	
-	# Bracketed parameter blocks used in procedure/process definitions
+	# Bracketed parameter declarations used in procedure/process headers
 	parameters:
 		name: "meta.function.parameters.turing"
 		begin: "\\G\\s*(\\()"
@@ -424,11 +423,68 @@ repository:
 	stdlib:
 		patterns: [
 			{include: "#modules"}
+			{include: "#stdproc"}
+			
+			# Routines/constants exported unqualified
+			{include: "#keyboard-constants"}
+			{include: "#math-routines"}
+			{include: "#str-routines"}
+			{include: "#typeconv-routines"}
 		]
 	
 	
+	# Procedures not associated with any specific module
+	stdproc:
+		name: "support.function.${1:/downcase}.turing"
+		match: """(?x)\\b
+			(addr|buttonchoose|buttonmoved|buttonwait|clock|cls|colou?r|colou?rback|date|delay|drawarc|drawbox|drawdot
+			|drawfill|drawfillarc|drawfillbox|drawfillmapleleaf|drawfilloval|drawfillpolygon|drawfillstar|drawline
+			|drawmapleleaf|drawoval|drawpic|drawpolygon|drawstar|empty|eof|fetcharg|getch|getchar|getenv|getpid
+			|getpriority|hasch|locate|locatexy|maxcol|maxcolou?r|maxint|maxnat|maxrow|maxx|maxy|minint|minnat
+			|mousewhere|nargs|parallelget|parallelput|play|playdone|pred|rand|randint|randnext|randomize
+			|randseed|setpriority|setscreen|simutime|sizeof|sizepic|sound|succ|sysclock|takepic|time|wallclock
+			|whatcol|whatcolou?r|whatcolou?rback|whatdotcolou?r|whatrow)\\b
+		"""
+		
+	
+	# Keyboard constants: http://compsci.ca/holtsoft/doc/keyboardmodule.html
+	"keyboard-constants":
+		name: "support.constant.keyboard.turing"
+		match: """(?x)\\b(?:
+			(?:KEY|ORD)_(?:
+				F1[0-2]|F[1-9]|CTRL_[A-Z]|ALT_[A-Z0-9]|(?:CTRL|ALT|SHIFT)_(?:F1[0-2]|F[1-9])|
+				ALT(?:_EQUALS|_MINUS)?|BACK_TAB|BACKSPACE|CTRL|DELETE|END|ENTER|ESC|HOME|INSERT|KEYPAD_5|PGDN|PGUP|SHIFT|SHIFT_TAB|TAB|
+				CTRL_(?:BACKSLASH|BACKSPACE|CARET|(?:UP|RIGHT|LEFT|DOWN)_ARROW|CLOSE_BRACKET|DELETE|END|HOME|INSERT|OPEN_BRACKET|PGDN|PGUP|UNDERSCORE)|
+				(?:UP|RIGHT|LEFT|DOWN)_ARROW)
+			|
+			ORD_(?:
+				AMPERSAND|APOSTROPHE|ASTERISK|BACKSLASH|BAR|CARET|COLON|COMMA|DOT|EQUALS|(?:GREATER|LESS)_THAN|
+				(?:CLOSE|OPEN)_(?:BRACE|BRACKET|PARENTHESIS)|(?:EXCALAMATION|HAS|QUESTION|QUOTATION)_MARK|MINUS|
+				(?:AT|DOLLAR|PERCENT)_SIGN|PERIOD|PLUS|SEMICOLON|SINGLE_QUOTE|SLASH|SPACE|TILDE|UNDERSCORE|[A-Z0-9]|LOWER_[A-Z])
+			)\\b
+		"""
+
+
+	# Math routines: http://compsci.ca/holtsoft/doc/mathmodule.html
+	"math-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(abs|arccos|arccosd|arcsin|arcsind|arctan|arctand|cos|cosd|exp|ln|max|min|sign|sin|sind|tan|tand|sqrt)\\b"
+
+
+	# Str routines: http://compsci.ca/holtsoft/doc/strmodule.html
+	"str-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(Lower|Upper|Trim|index|length|repeat)\\b"
+
+
+	# TypeConv routines: http://compsci.ca/holtsoft/doc/typeconvmodule.html
+	"typeconv-routines":
+		name: "support.function.${1:/downcase}.turing"
+		match: "\\b(ceil|chr|erealstr|floor|frealstr|intreal|intstr|natreal|natstr|ord|realstr|round|strint|strintok|strnat|strnatok|strreal|strrealok)\\b"
+
+	
+	
 	# Modules
-	# match: "\\b(____)\\b(?:(\\.)(________)?\\b)?"
 	modules:
 		patterns: [{
 			
@@ -530,7 +586,7 @@ repository:
 			captures:
 				1: name: "support.class.${1:/downcase}.turing"
 				2: name: "meta.delimiter.property.period.turing"
-				3: patterns: [include: "#key-constants"]
+				3: patterns: [include: "#keyboard-constants"]
 		},{
 			
 			# Limits
@@ -687,45 +743,3 @@ repository:
 				2: name: "meta.delimiter.property.period.turing"
 				3: name: "support.function.${3:/downcase}.turing"
 		}]
-
-
-	# Routines/constants exported unqualified
-	unqualified:
-		patterns: [
-			{ include: "#key-constants" }
-			{ include: "#math-routines" }
-			{ include: "#str-routines"  }
-			{ include: "#typeconv-routines"}
-		]
-
-	# Keyboard constants: http://compsci.ca/holtsoft/doc/keyboardmodule.html
-	"key-constants":
-		name: "support.constant.keyboard.turing"
-		match: """(?x)\\b(?:
-			(?:KEY|ORD)_(?:
-				F1[0-2]|F[1-9]|CTRL_[A-Z]|ALT_[A-Z0-9]|(?:CTRL|ALT|SHIFT)_(?:F1[0-2]|F[1-9])|
-				ALT(?:_EQUALS|_MINUS)?|BACK_TAB|BACKSPACE|CTRL|DELETE|END|ENTER|ESC|HOME|INSERT|KEYPAD_5|PGDN|PGUP|SHIFT|SHIFT_TAB|TAB|
-				CTRL_(?:BACKSLASH|BACKSPACE|CARET|(?:UP|RIGHT|LEFT|DOWN)_ARROW|CLOSE_BRACKET|DELETE|END|HOME|INSERT|OPEN_BRACKET|PGDN|PGUP|UNDERSCORE)|
-				(?:UP|RIGHT|LEFT|DOWN)_ARROW)
-			|
-			ORD_(?:
-				AMPERSAND|APOSTROPHE|ASTERISK|BACKSLASH|BAR|CARET|COLON|COMMA|DOT|EQUALS|(?:GREATER|LESS)_THAN|
-				(?:CLOSE|OPEN)_(?:BRACE|BRACKET|PARENTHESIS)|(?:EXCALAMATION|HAS|QUESTION|QUOTATION)_MARK|MINUS|
-				(?:AT|DOLLAR|PERCENT)_SIGN|PERIOD|PLUS|SEMICOLON|SINGLE_QUOTE|SLASH|SPACE|TILDE|UNDERSCORE|[A-Z0-9]|LOWER_[A-Z])
-			)\\b
-		"""
-
-	# Math routines: http://compsci.ca/holtsoft/doc/mathmodule.html
-	"math-routines":
-		name: "support.function.${1:/downcase}.turing"
-		match: "\\b(abs|arccos|arccosd|arcsin|arcsind|arctan|arctand|cos|cosd|exp|ln|max|min|sign|sin|sind|tan|tand|sqrt)\\b"
-
-	# Str routines: http://compsci.ca/holtsoft/doc/strmodule.html
-	"str-routines":
-		name: "support.function.${1:/downcase}.turing"
-		match: "\\b(Lower|Upper|Trim|index|length|repeat)\\b"
-
-	# TypeConv module: http://compsci.ca/holtsoft/doc/typeconvmodule.html
-	"typeconv-routines":
-		name: "support.function.${1:/downcase}.turing"
-		match: "\\b(ceil|chr|erealstr|floor|frealstr|intreal|intstr|natreal|natstr|ord|realstr|round|strint|strintok|strnat|strnatok|strreal|strrealok)\\b"
