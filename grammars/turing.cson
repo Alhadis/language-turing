@@ -17,6 +17,7 @@ repository:
 			{ include: "#case"          }
 			{ include: "#function"      }
 			{ include: "#keywords"      }
+			{ include: "#modifiers"     }
 			{ include: "#variables"     }
 			{ include: "#operators"     }
 			{ include: "#forward"       }
@@ -192,12 +193,12 @@ repository:
 		},{
 			
 			# Other operators
-			match: "\\b(bits|div|mod|rem|shl|shr)\\b"
+			match: "\\b(all|bits|div|lower|mod|nil|rem|shl|shr|unit|upper)\\b"
 			name: "keyword.operator.$1.turing"
 		},{
 			
 			# Statements
-			match: "\\b(assert|begin|break|close|exit|fork|free|get|init|invariant|new|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
+			match: "\\b(assert|begin|break|close|exit|fork|free|get|init|invariant|new|objectclass|open|pause|put|quit|read|result|return|seek|signal|tag|tell|wait|write)\\b"
 			name: "keyword.other.statement.$1.turing"
 		},{
 		
@@ -209,8 +210,8 @@ repository:
 				4: name: "punctuation.definition.arguments.end.turing"
 		},{
 			# Types
-			match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of)\\b"
-			name: "storage.type.$1.turing"
+			match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of|string)\\b"
+			name: "storage.type.$1-type.turing"
 		},{
 			# Colour constants
 			match: """(?x)\\b
@@ -220,9 +221,29 @@ repository:
 			name: "constant.other.colour.turing"
 		},{
 		
-			# Skip (used in get/put statements)
-			match: "\\b(skip)\\b"
-			name: "constant.language.skip.turing"
+			# Language variables
+			match: "\\b(skip|self)\\b"
+			name: "constant.language.$1.turing"
+		}]
+	
+	
+	# Various modifier keywords
+	modifiers:
+		patterns: [{
+			
+			# Checked/unchecked
+			match: "\\b(unchecked|checked)\\b"
+			name: "storage.modifier.$1.compiler-directive.oot.turing"
+		},{
+			
+			# Unqualified
+			match: "\\b(unqualified|~\\.)\\b"
+			name: "storage.modifier.unqualified.turing"
+		},{
+			
+			# Other
+			match: "\\b(external|flexible|opaque|register)\\b"
+			name: "storage.modifier.$1.turing"
 		}]
 
 

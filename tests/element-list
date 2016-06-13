@@ -4,7 +4,7 @@
 % abs - absolute value function
 % addr - address of a variable
 % addressint - type
-all - all members of a set
+]% all - all members of a set
 % and - operator
 anyclass - the ancestor of all classes
 % arctan - arctangent function (radians)
@@ -28,7 +28,7 @@ bind - declaration
 % char(n) - type
 % char - type
 % cheat - type cheating
-checked - compiler directive
+% checked - compiler directive
 % chr - integer-to-character function
 % class - declaration √
 % clock - millisecs used procedure
@@ -46,7 +46,7 @@ collection - declaration
 % Concurrency.getpriority
 % Concurrency.setpriority
 % Concurrency.simutime
-condition - declaration
+% condition - declaration
 % Config
 % Config.Display
 % Config.Lang
@@ -128,7 +128,7 @@ explicitStringConstant - string literal
 explicitTrueFalseConstant - boolean literal
 % expn - expression
 % export - list
-external - declaration
+% external - declaration
 % false - boolean value (not true)
 % fetcharg - fetch argument function
 % File
@@ -138,7 +138,7 @@ external - declaration
 % File.Exists
 % File.Rename
 % File.Status
-flexible - array initialization
+% flexible - array initialization
 % floor - real-to-integer function
 % Font
 % Font.Draw
@@ -314,7 +314,7 @@ flexible - array initialization
 % locate - procedure
 % locatexy - graphics procedure
 % loop - statement
-lower - bound
+% lower - bound
 % Math
 % max - maximum function
 % maxcol - maximum column function
@@ -363,10 +363,10 @@ lower - bound
 % Net.TokenAvailable
 % Net.WaitForConnection
 % new - statement
-nil - pointer to a collection
+% nil - pointer to a collection
 % not - true/false (boolean) operator
-objectclass - of a pointer
-opaque - type
+% objectclass - of a pointer
+% opaque - type
 % open - file statement
 % or - operator
 % ord - character-to-integer function
@@ -433,7 +433,7 @@ opaque - type
 % realn - n-byte real number type
 % realstr - real-to-string function
 % record - type
-register - use machine register
+% register - use machine register
 % rem - remainder operator
 % repeat - make copies of string:function
 % result - statement
@@ -450,7 +450,7 @@ register - use machine register
 % round - real-to-integer function
 % scalar - type
 % seek - (file) statement
-self - pointer to current object
+% self - pointer to current object
 % separator - between tokens in a program
 % set - type
 % setConstructor -
@@ -545,11 +545,11 @@ self - pointer to current object
 % type - declaration
 % TypeConv
 % typeSpec - type specification
-unchecked - compiler directive
+% unchecked - compiler directive
 union - type
-unit - file containing module, monitor, or class
-unqualified - export
-upper - bound
+% unit - file containing module, monitor, or class
+% unqualified - export
+% upper - bound
 % var - declaration
 % variableReference - use of a variable
 % View
