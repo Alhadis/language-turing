@@ -17,6 +17,8 @@ put "The first word is: ", firstWord ("Henry Hudson")
 16#FFFF
 8#10
 
+const speed := 2.93e3
+
 
 % Character constants
 var c : char := 'H'

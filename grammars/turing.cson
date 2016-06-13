@@ -68,7 +68,7 @@ repository:
 		patterns: [
 			{name: "constant.numeric.base-16.hex.turing", match: "16#[A-Fa-f0-9]+"}
 			{name: "constant.numeric.base-$1.turing",     match: "(\\d+)#\\d+"}
-			{name: "constant.numeric.float.turing",       match: "\\b\\d+\\.\\d+\\b"}
+			{name: "constant.numeric.float.turing",       match: "\\b\\d+\\.\\d+(?:[Ee][\\+\\-]?\\d+)?\\b"}
 			{name: "constant.numeric.int.turing",         match: "\\b\\d+\\b"}
 		]
 	
@@ -454,7 +454,7 @@ repository:
 			# Declaration
 			name: "meta.variable-declaration.turing"
 			begin: "\\b(var|const)\\s+"
-			end:   "(:=?)\\s*((\\w+(?:\\s*\\(\\s*\\d+\\s*\\))?))?\\s*(:=)?"
+			end:   "(:=?)\\s*((?!\\d)(\\w+(?:\\s*\\(\\s*\\d+\\s*\\))?))?\\s*(:=)?"
 			beginCaptures:
 				1: name: "storage.type.$1.turing"
 			endCaptures:
