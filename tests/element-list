@@ -278,7 +278,7 @@ flexible - array initialization
 % GUI.SetXOR
 % GUI.Show
 % GUI.ShowMenuBar
-handler - exception handler
+% handler - exception handler
 % hasch - has character function
 % id - (identifier) name of an item in a program
 % #if - used for conditional compilation
