@@ -10,6 +10,16 @@ put "The first word is: ", firstWord ("Henry Hudson")
 	% The output is Henry.
 
 
+% Character escaping
+'a\"a'
+"Don\'t stop"
+"New \n line"
+"Form \f feed"
+"Back \b space"
+"Back \\ slash"
+"Escape \e character"
+"Return \r return"
+
 % Type
 type nameType : string ( 30 )
 type range : 0 .. 150

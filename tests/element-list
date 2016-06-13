@@ -4,7 +4,7 @@
 % abs - absolute value function
 % addr - address of a variable
 % addressint - type
-]% all - all members of a set
+% all - all members of a set
 % and - operator
 anyclass - the ancestor of all classes
 % arctan - arctangent function (radians)
@@ -124,8 +124,8 @@ explicitCharConstant - character literal
 explicitConstant - literal
 explicitIntegerConstant - integer literal
 explicitRealConstant - real literal
-explicitStringConstant - string literal
-explicitTrueFalseConstant - boolean literal
+% explicitStringConstant - string literal
+% explicitTrueFalseConstant - boolean literal
 % expn - expression
 % export - list
 % external - declaration

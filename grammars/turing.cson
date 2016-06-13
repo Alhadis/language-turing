@@ -10,7 +10,7 @@ repository:
 		patterns: [
 			{ include: "#comments"      }
 			{ include: "#boolean"       }
-			{ include: "#string"        }
+			{ include: "#strings"       }
 			{ include: "#numbers"       }
 			{ include: "#for"           }
 			{ include: "#cc"            }
@@ -55,10 +55,11 @@ repository:
 	
 	
 	# String literals
-	string:
-		name: "string.quoted.double.turing"
-		begin: '"'
-		end:   '"'
+	strings:
+		patterns: [
+			{name: "string.quoted.double.turing", begin: '"', end: '"', patterns: [include: "#escapes"]}
+			{name: "string.quoted.single.turing", begin: "'", end: "'", patterns: [include: "#escapes"]}
+		]
 	
 	
 	# Numbers
@@ -74,6 +75,21 @@ repository:
 		patterns: [
 			{match: "\\w+", name: "variable.name.turing"}
 			{match: ",",    name: "meta.delimiter.object.comma.turing"}
+		]
+	
+	
+	# Escaped characters
+	escapes:
+		patterns: [
+			{match: '\\\\"',    name: "constant.character.escape.double-quote.turing"}
+			{match: "\\\\'",    name: "constant.character.escape.single-quote.turing"}
+			{match: "\\\\[nN]", name: "constant.character.escape.newline.turing"}
+			{match: "\\\\[tT]", name: "constant.character.escape.tab.turing"}
+			{match: "\\\\[fF]", name: "constant.character.escape.form-feed.turing"}
+			{match: "\\\\[rR]", name: "constant.character.escape.return.turing"}
+			{match: "\\\\[bB]", name: "constant.character.escape.backspace.turing"}
+			{match: "\\\\[eE]", name: "constant.character.escape.esc.turing"}
+			{match: "\\\\\\\\", name: "constant.character.escape.backslash.turing"}
 		]
 	
 	
