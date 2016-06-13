@@ -315,7 +315,7 @@ repository:
 	handler:
 		name: "meta.scope.handler.turing"
 		begin: "\\b(handler)\\s*(\\()\\s*(\\w+)\\s*(\\))"
-		end:   "\\b(end\\s+handler)\\b"
+		end:   "\\b(end)\\s+(handler)\\b"
 		patterns: [include: "$self"]
 		beginCaptures:
 			1: name: "storage.type.handler.turing"
@@ -323,7 +323,8 @@ repository:
 			3: name: "variable.parameter.handler.turing"
 			4: name: "punctuation.definition.arguments.end.turing"
 		endCaptures:
-			0: name: "keyword.control.end.turing"
+			1: name: "keyword.control.end.turing"
+			2: name: "storage.type.handler.turing"
 	
 	
 	# Class/module declarations
