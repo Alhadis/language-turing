@@ -51,8 +51,8 @@ condition - declaration
 % Config.Display
 % Config.Lang
 % Config.Machine
-const - constant declaration
-constantReference - use of a constant
+% const - constant declaration
+% constantReference - use of a constant
 % cos - cosine function (radians)
 % cosd - cosine function (degrees)
 % date - procedure

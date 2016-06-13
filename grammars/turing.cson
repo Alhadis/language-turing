@@ -370,13 +370,13 @@ repository:
 		}]
 	
 
-	# Variables
+	# Variables and constants
 	variables:
 		patterns: [{
 			
 			# Declaration
 			name: "meta.variable-declaration.turing"
-			begin: "\\b(var)\\s+"
+			begin: "\\b(var|const)\\s+"
 			end:   "(:)\\s*(\\w*)\\s*(:=)?"
 			beginCaptures:
 				1: name: "storage.type.$1.turing"
