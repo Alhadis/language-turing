@@ -15,7 +15,7 @@ array - type
 % assignment - statement
 % begin - statement √
 bind - declaration
-bits - extraction
+% bits - extraction
 % body - declaration
 % boolean - true-false type
 % break - debugger pause statement
@@ -68,7 +68,7 @@ declaration - create a variable
 % Dir.Get
 % Dir.GetLong
 % Dir.Open
-div - integer truncating division operator
+% div - integer truncating division operator
 % Draw
 % Draw.Arc
 % Draw.Box
@@ -286,8 +286,8 @@ flexible - array initialization
 % implement by - clause
 % implement - clause
 % import - list
-in - member of a set
-include - source files
+% in - member of a set
+% include - source files
 % index - find pattern in string function
 indexType
 indirection - operator (@)
@@ -328,7 +328,7 @@ lower - bound
 % min - minimum function
 % minint - minimum integer function
 % minnat - minimum natural number function
-mod - modulo operator
+% mod - modulo operator
 module - declaration
 % monitor - declaration
 % Mouse
@@ -434,7 +434,7 @@ realn - n-byte real number type
 % realstr - real-to-string function
 record - type
 register - use machine register
-rem - remainder operator
+% rem - remainder operator
 % repeat - make copies of string:function
 % result - statement
 % return - statement
@@ -456,8 +456,8 @@ set - type
 setConstructor
 % setpriority - procedure
 % setscreen - graphics procedure
-shl - shift left operator
-shr - shift right operator
+% shl - shift left operator
+% shr - shift right operator
 % sign - function
 % signal - wake up a process statement
 % simutime - simulated time function

@@ -167,12 +167,17 @@ repository:
 		patterns: [{
 			
 			# Control flow
-			match: "\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when)\\b"
+			match: "\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when|include|in)\\b"
 			name: "keyword.control.$1.turing"
 		},{
 			
 			# Logical operators
 			match: "\\b(and|not|x?or)\\b"
+			name: "keyword.operator.logical.$1.turing"
+		},{
+			
+			# Other operators
+			match: "\\b(bits|div|mod|rem|shl|shr)\\b"
 			name: "keyword.operator.$1.turing"
 		},{
 			
