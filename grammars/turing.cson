@@ -143,17 +143,30 @@ repository:
 
 	# Function call
 	"function-call":
-		name: "meta.function-call.turing"
-		begin: "(([\\w.]+))\\s*(\\()"
-		end:   "\\)"
-		contentName: "meta.function-call.arguments.turing"
-		beginCaptures:
-			1: name: "entity.function.name.turing"
-			2: patterns: [include: "#function-name"]
-			3: name: "punctuation.definition.arguments.begin.turing"
-		endCaptures:
-			0: name: "punctuation.definition.arguments.end.turing"
-		patterns: [include: "$self"]
+		patterns: [{
+			
+			# functionName ( args )
+			name: "meta.function-call.turing"
+			begin: "(([\\w.]+))\\s*(\\()"
+			end:   "\\)"
+			contentName: "meta.function-call.arguments.turing"
+			beginCaptures:
+				1: name: "entity.function.name.turing"
+				2: patterns: [include: "#function-name"]
+				3: name: "punctuation.definition.arguments.begin.turing"
+			endCaptures:
+				0: name: "punctuation.definition.arguments.end.turing"
+			patterns: [include: "$self"]
+		
+		},{
+			
+			# functionName
+			name: "meta.function-call.turing"
+			match: "^\\s*(([\\w.]+))\\s*(?=$|%|/\\*)"
+			captures:
+				1: name: "entity.function.name.turing"
+				2: patterns: [include: "#function-name"]
+		}]
 	
 	
 	# Function name: Wrapper for bundled inclusions
