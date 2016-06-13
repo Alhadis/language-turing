@@ -324,17 +324,17 @@ repository:
 			0: name: "keyword.control.end.turing"
 	
 	
-	# Class declarations
+	# Class/module declarations
 	class:
-		name: "meta.scope.class-block.turing"
-		begin: "^\\s*(class)\\s+(\\w+)"
+		name: "meta.scope.$1-block.turing"
+		begin: "^\\s*(class|module)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\2)"
 		patterns: [
 			{include: "#class-innards"}
 			{include: "$self"}
 		]
 		beginCaptures:
-			1: name: "storage.type.class.turing"
+			1: name: "storage.type.$1.turing"
 			2: name: "entity.name.type.class.turing"
 		endCaptures:
 			1: name: "keyword.control.end.turing"

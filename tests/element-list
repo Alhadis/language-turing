@@ -329,7 +329,7 @@ lower - bound
 % minint - minimum integer function
 % minnat - minimum natural number function
 % mod - modulo operator
-module - declaration
+% module - declaration
 % monitor - declaration
 % Mouse
 % Mouse.ButtonChoose
