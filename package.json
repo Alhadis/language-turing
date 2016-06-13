@@ -2,7 +2,7 @@
 	"name": "language-turing",
 	"version": "0.0.1",
 	"description": "Turing language support for Atom",
-	"keywords": ["Turing", "Holt Software", "Toronto", "Canada"],
+	"keywords": ["Turing", "Holt Software", "Toronto", "Ontario", "Canada"],
 	"repository": "https://github.com/Alhadis/language-turing",
 	"license": "ISC",
 	"engines": {
