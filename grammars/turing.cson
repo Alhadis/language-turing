@@ -331,25 +331,43 @@ repository:
 		
 	
 
-	# Forward procedure
+	# Forward/deferred procedure
 	forward:
-		name: "meta.forward.procedure.turing"
-		begin: "\\b(forward)\\s+(procedure|proc)\\s+(\\w+)"
-		end:   "(?=$|%|/\\*)"
-		beginCaptures:
-			1: name: "storage.modifier.$1.turing"
-			2: name: "storage.type.function.turing"
-			3: name: "entity.name.function.turing"
-		patterns: [
-			{include: "#parameters"}
-			{include: "$self"}
-		]
+		patterns: [{
+			
+			# Procedure
+			name: "meta.$1.procedure.turing"
+			begin: "\\b(deferred|forward)\\s+(procedure|proc)\\s+(\\w+)"
+			end:   "(?=$|%|/\\*)"
+			beginCaptures:
+				1: name: "storage.modifier.$1.turing"
+				2: name: "storage.type.function.turing"
+				3: name: "entity.name.function.turing"
+			patterns: [
+				{include: "#parameters"}
+				{include: "$self"}
+			]
+		},{
+			
+			# Function
+			name: "meta.$1.function.turing"
+			begin: "\\b(deferred|forward)\\s+(function|fcn)\\s+(\\w+)"
+			end:   "(?=$|%|/\\*)"
+			beginCaptures:
+				1: name: "storage.modifier.$1.turing"
+				2: name: "storage.type.function.turing"
+				3: name: "entity.name.function.turing"
+			patterns: [
+				{include: "#parameters"}
+				{include: "$self"}
+			]
+		}]
 
 
 	# Procedure declaration
 	procedure:
 		name: "meta.scope.$1.procedure.turing"
-		begin: "\\b(?:(deferred|body)\\s+)?(procedure|proc)\\s+(\\w+)"
+		begin: "\\b(?:(body)\\s+)?(procedure|proc)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\3)"
 		patterns: [
 			{include: "#parameters"}
