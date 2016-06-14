@@ -20,7 +20,7 @@ repository:
 			{ include: "#keywords"      }
 			{ include: "#modifiers"     }
 			{ include: "#variables"     }
-			{ include: "#operators"     }
+			{ include: "#punctuation"   }
 			{ include: "#forward"       }
 			{ include: "#procedure"     }
 			{ include: "#process"       }
@@ -529,8 +529,8 @@ repository:
 		match: "\\b(true|false)\\b"
 	
 	
-	# Arithmetic/Punctuation-based operators
-	operators:
+	# Arithmetic/Punctuation
+	punctuation:
 		patterns: [
 			{match: "\\.\\.",  name: "punctuation.definition.range.turing"}
 			{match: ":=",      name: "punctuation.separator.key-value.assignment.turing"}
@@ -549,6 +549,8 @@ repository:
 			{match: "#",       name: "keyword.operator.type-cheat.turing"}
 			{match: "@",       name: "keyword.operator.indirection.turing"}
 			{match: ":",       name: "punctuation.separator.key-value.turing"}
+			{match: "\\(",     name: "punctuation.definition.arguments.begin.turing"}
+			{match: "\\)",     name: "punctuation.definition.arguments.end.turing"}
 		]
 	
 	
