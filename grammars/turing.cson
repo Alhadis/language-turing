@@ -1,6 +1,6 @@
 name: "Turing"
 scopeName: "source.turing"
-fileTypes: [".t", ".tu"]
+fileTypes: ["t", "tu"]
 patterns: [include: "#main"]
 
 repository:
