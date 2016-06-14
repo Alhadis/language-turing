@@ -1,3 +1,5 @@
 ".source.turing":
 	editor:
 		commentStart: "% "
+		increaseIndentPattern: "(?:\\b(?:begin|else|loop|then|of|class|procedure\\b.*)|:)\\s*$"
+		decreaseIndentPattern: "\\b(end(?:\\s+(?:\\w+))?)\\s*$"
