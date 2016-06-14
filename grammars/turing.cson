@@ -28,6 +28,7 @@ repository:
 			{ include: "#class"         }
 			{ include: "#type"          }
 			{ include: "#record"        }
+			{ include: "#union"         }
 			{ include: "#function-call" }
 			{ include: "#stdlib"        }
 		]
@@ -264,7 +265,7 @@ repository:
 
 	# Types
 	types:
-		match: "\\b(addressint|array|boolean|char|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of|string)\\b"
+		match: "\\b(addressint|array|boolean|char|collection|enum|int[124]?|nat[124]?|real[48]?|pointer\\s+to|set\\s+of|string)\\b"
 		name: "storage.type.$1-type.turing"
 
 
@@ -305,7 +306,7 @@ repository:
 		begin: "\\b(case)\\s+(\\w+)\\s+(of)\\b"
 		end:   "\\b(end\\s+case)\\b"
 		patterns: [
-			{match: "\\b(label)\\b", name: "keyword.other.statement.label"}
+			{include: "#label"}
 			{include: "$self"}
 		]
 		beginCaptures:
@@ -315,6 +316,20 @@ repository:
 		endCaptures:
 			1: name: "keyword.control.end.case.turing"
 
+
+	# Label statements
+	label:
+		name: "meta.label.turing"
+		begin: "\\b(label)\\b"
+		end:   ":"
+		beginCaptures: 1: name: "keyword.other.statement.label.turing"
+		endCaptures:   0: name: "punctuation.separator.key-value.turing"
+		patterns: [
+			{include: "$self"}
+			{include: "#list"}
+		]
+		
+	
 
 	# Forward procedure
 	forward:
@@ -484,6 +499,27 @@ repository:
 			beginCaptures:
 				1: name: "variable.name.turing"
 				2: name: "punctuation.separator.key-value.turing"
+		},{
+			
+			# Bindings
+			name: "meta.binding.turing"
+			begin: "\\b(bind)\\b"
+			end: "(?=$|%|/\\*)"
+			beginCaptures:
+				1: name: "keyword.operator.bind.turing"
+			patterns: [{
+				
+				# Individual variable bindings
+				begin: "\\b(var)\\b"
+				end:   "\\b(to)\\b"
+				patterns: [include: "#list"]
+				beginCaptures: 1: name: "storage.type.$1.turing"
+				endCaptures:   1: name: "keyword.operator.to.turing"
+			},{
+				
+				# Comma separators
+				include: "#list"
+			}]
 		}]
 
 	
@@ -546,13 +582,34 @@ repository:
 		endCaptures:
 			1: name: "keyword.control.end.turing"
 			2: name: "storage.type.record.turing"
-		
+	
+	
+	# Union/variant record
+	union:
+		name: "meta.scope.union.turing"
+		begin: "\\b(union)\\s+(\\w+)\\s*(:)(.*)\\b(of)\\b"
+		end:   "\\b(end)\\s+(union)\\b"
+		patterns: [
+			{include: "#label"}
+			{include: "$self"}
+		]
+		beginCaptures:
+			1: name: "storage.type.union.turing"
+			2: name: "entity.name.union.turing"
+			3: name: "punctuation.separator.key-value.turing"
+			4: patterns: [include: "$self"]
+			5: name: "keyword.operator.of.turing"
+		endCaptures:
+			1: name: "keyword.control.end.turing"
+			2: name: "storage.type.union.turing"
+	
 
 	# Standard library
 	stdlib:
 		patterns: [
 			{include: "#modules"}
 			{include: "#stdproc"}
+			{match: "\\b(anyclass)\\b", name: "support.class.anyclass.turing"}
 			
 			# Routines/constants exported unqualified
 			{include: "#keyboard-constants"}

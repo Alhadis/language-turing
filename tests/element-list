@@ -6,7 +6,7 @@
 % addressint - type
 % all - all members of a set
 % and - operator
-anyclass - the ancestor of all classes
+% anyclass - the ancestor of all classes
 % arctan - arctangent function (radians)
 % arctand - arctangent function (degrees)
 % array - type
@@ -14,7 +14,7 @@ anyclass - the ancestor of all classes
 % assignability - of expression to variable
 % assignment - statement
 % begin - statement √
-bind - declaration
+% bind - declaration
 % bits - extraction
 % body - declaration
 % boolean - true-false type
@@ -34,7 +34,7 @@ bind - declaration
 % clock - millisecs used procedure
 % close - file statement
 % cls - clear screen graphics procedure
-collection - declaration
+% collection - declaration
 % color - text color graphics procedure
 % colorback - background color procedure
 % colour - text color graphics procedure
@@ -123,7 +123,7 @@ collection - declaration
 % explicitCharConstant - character literal
 % explicitConstant - literal
 % explicitIntegerConstant - integer literal
-explicitRealConstant - real literal
+% explicitRealConstant - real literal
 % explicitStringConstant - string literal
 % explicitTrueFalseConstant - boolean literal
 % expn - expression
@@ -546,7 +546,7 @@ explicitRealConstant - real literal
 % TypeConv
 % typeSpec - type specification
 % unchecked - compiler directive
-union - type
+% union - type
 % unit - file containing module, monitor, or class
 % unqualified - export
 % upper - bound

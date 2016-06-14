@@ -19,6 +19,10 @@ put "The first word is: ", firstWord ("Henry Hudson")
 
 const speed := 2.93e3
 
+% Bindings
+bind var item1 to A (n), var item2 to B
+item := 15
+
 
 % Character constants
 var c : char := 'H'
@@ -101,3 +105,21 @@ loop
 	get word
 	exit when word = "Stop"
 end loop
+
+
+% Union example
+const passenger := 0
+const farm  := 1
+const recreational  := 2
+
+type vehicleInfo :
+	union kind : passenger .. recreational of
+		label passenger :
+			cylinders : 1..16
+		label farm :
+			farmClass :string ( 10 )
+		label : % No fields for "otherwise" clause
+	end union
+var v : vehicleInfo
+…
+tag v, passenger % Activate passenger part v.cylinders := 6
