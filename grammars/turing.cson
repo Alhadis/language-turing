@@ -366,7 +366,7 @@ repository:
 
 	# Procedure declaration
 	procedure:
-		name: "meta.scope.$1.procedure.turing"
+		name: "meta.scope.procedure.turing"
 		begin: "\\b(?:(body)\\s+)?(procedure|proc)\\s+(\\w+)"
 		end:   "\\b(end)\\s+(\\3)"
 		patterns: [
