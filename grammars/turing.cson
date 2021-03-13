@@ -1,6 +1,22 @@
 name: "Turing"
 scopeName: "source.turing"
 fileTypes: ["t", "tu"]
+firstLineMatch: """(?x)
+
+	# Emacs modeline
+	-\\*-(?i:[ \\t]*(?=[^:;\\s]+[ \\t]*-\\*-)|(?:.*?[ \\t;]|(?<=-\\*-))[ \\t]*mode[ \\t]*:[ \\t]*)
+		(?i:turing)
+	(?=[ \\t;]|(?<![-*])-\\*-).*?-\\*-
+	
+	|
+		
+	# Vim modeline
+	(?:(?:^|[ \\t])(?:vi|Vi(?=m))(?:m[<=>]?[0-9]+|m)?|[ \\t]ex)(?=:(?=[ \\t]*set?[ \\t][^\\r\\n:]+:)|:(?![ \\t]*set?[ \\t]))
+	(?:(?:[ \\t]*:[ \\t]*|[ \\t])\\w*(?:[ \\t]*=(?:[^\\\\\\s]|\\\\.)*)?)*[ \\t:]
+	(?:filetype|ft|syntax)[ \\t]*=
+		(?i:turing)
+	(?=$|\\s|:)
+"""
 patterns: [include: "#main"]
 
 repository:
