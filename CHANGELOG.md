@@ -3,16 +3,18 @@ Change Log
 
 This project honours [Semantic Versioning](http://semver.org).
 
-[Staged]: ../../compare/v1.0.1...HEAD
+[Staged]: ../../compare/v1.0.2...HEAD
 
 
-[Staged]
+[v1.0.2]
 ------------------------------------------------------------------------
+**March 14th, 2021**  
 * Added support for modeline recognition
 * Added this change-log
 * Fixed highlighting and auto-indentation of nested loops [[`#2`][]]
 
-[`#2`]: https://github.com/Alhadis/language-turing/issues/2
+[v1.0.2]: https://github.com/Alhadis/language-turing/releases/v1.0.2
+[`#2`]:   https://github.com/Alhadis/language-turing/issues/2
 
 
 [v1.0.1]
