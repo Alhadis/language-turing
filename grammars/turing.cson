@@ -219,7 +219,7 @@ repository:
 		patterns: [{
 			
 			# Control flow
-			match: "\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when|include|in)\\b"
+			match: "^\\s*\\b((?:end\\s+)?if|then|elsif|else|(?:end\\s+)?loop|exit|when|include|in)\\b"
 			name: "keyword.control.$1.turing"
 		},{
 			
