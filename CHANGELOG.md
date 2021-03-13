@@ -10,6 +10,9 @@ This project honours [Semantic Versioning](http://semver.org).
 ------------------------------------------------------------------------
 * Added support for modeline recognition
 * Added this change-log
+* Fixed highlighting and auto-indentation of nested loops [[`#2`][]]
+
+[`#2`]: https://github.com/Alhadis/language-turing/issues/2
 
 
 [v1.0.1]
